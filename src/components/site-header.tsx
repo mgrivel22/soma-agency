@@ -1,0 +1,108 @@
+"use client";
+
+import { CtaButton } from "@/components/cta-button";
+import { Logo } from "@/components/logo";
+import { siteConfig } from "@/lib/site";
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+export function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  return (
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b transition-colors duration-300",
+        scrolled || open
+          ? "border-white/8 bg-zinc-950/85 backdrop-blur-xl"
+          : "border-transparent bg-zinc-950/40 backdrop-blur-md",
+      )}
+    >
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:h-[4.25rem] sm:px-6 lg:px-8">
+        <Logo />
+        <nav aria-label="Navigation principale" className="hidden items-center gap-8 lg:flex">
+          {siteConfig.nav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium text-zinc-300 transition-colors hover:text-white"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+        <div className="flex items-center gap-2">
+          <CtaButton
+            href="/#contact"
+            className="hidden h-10 px-4 text-sm sm:inline-flex lg:h-11 lg:px-5 lg:text-[15px]"
+          >
+            Obtenir mon audit gratuit
+          </CtaButton>
+          <CtaButton href="/#contact" className="h-10 px-3 text-sm sm:hidden">
+            Audit gratuit
+          </CtaButton>
+          <button
+            type="button"
+            className="inline-flex size-10 items-center justify-center rounded-lg text-zinc-200 ring-1 ring-white/10 transition hover:bg-white/5 lg:hidden"
+            aria-expanded={open}
+            aria-controls="menu-mobile"
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            <span className="sr-only">{open ? "Fermer le menu" : "Ouvrir le menu"}</span>
+          </button>
+        </div>
+      </div>
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            id="menu-mobile"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-white/8 bg-zinc-950 lg:hidden"
+          >
+            <nav className="flex flex-col gap-1 px-5 py-4" aria-label="Navigation mobile">
+              {siteConfig.nav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg px-3 py-3 text-base font-medium text-zinc-100 hover:bg-white/5"
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <CtaButton
+                href="/#contact"
+                className="mt-2 w-full"
+                onClick={() => setOpen(false)}
+              >
+                Obtenir mon audit gratuit
+              </CtaButton>
+            </nav>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </header>
+  );
+}
