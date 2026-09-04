@@ -19,8 +19,16 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+function safeMetadataBase(url: string) {
+  try {
+    return new URL(url || "https://somadigital.fr");
+  } catch {
+    return new URL("https://somadigital.fr");
+  }
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: safeMetadataBase(siteConfig.url),
   title: {
     default: siteConfig.title,
     template: "%s | Soma Digital",
@@ -39,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: siteConfig.url,
+    url: siteConfig.url || "https://somadigital.fr",
     siteName: siteConfig.name,
     title: siteConfig.title,
     description: siteConfig.description,
