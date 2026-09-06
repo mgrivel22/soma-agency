@@ -1,8 +1,13 @@
 import { CtaButton } from "@/components/cta-button";
-import { LaptopFrame, MiniSite, PhoneFrame } from "@/components/mockups";
+import {
+  LaptopFrame,
+  MiniSite,
+  PhoneFrame,
+  ProjectImagePreview,
+} from "@/components/mockups";
 import { Container } from "@/components/ui-primitives";
 import { getProject, projects } from "@/lib/projects";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -20,9 +25,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = getProject(slug);
   if (!project) return {};
   return {
-    title: `${project.name} — projet conceptuel`,
+    title: project.conceptual
+      ? `${project.name} — projet conceptuel`
+      : `${project.name} — réalisation`,
     description: project.objective,
-    robots: { index: false, follow: true },
+    robots: project.conceptual
+      ? { index: false, follow: true }
+      : { index: true, follow: true },
   };
 }
 
@@ -48,7 +57,7 @@ export default async function ProjectPage({ params }: Props) {
                 {project.sector}
               </span>
               <span className="rounded-full bg-emerald-400/10 px-2.5 py-1 text-xs font-medium text-emerald-300 ring-1 ring-emerald-400/20">
-                Projet conceptuel
+                {project.conceptual ? "Projet conceptuel" : "Site en ligne"}
               </span>
             </div>
             <h1 className="mt-4 text-3xl font-semibold text-zinc-50 sm:text-5xl">
@@ -82,23 +91,56 @@ export default async function ProjectPage({ params }: Props) {
                 </ul>
               </div>
             </div>
-            <CtaButton href="/#contact" className="mt-10">
-              Obtenir mon audit gratuit
-            </CtaButton>
-            <p className="mt-4 max-w-md text-sm text-zinc-500">
-              Ceci est un exemple d’interface, pas un site client publié. Il
-              illustre le type de parcours que nous concevons pour ce métier.
-            </p>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+              {project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 min-h-12 items-center justify-center gap-2 rounded-xl bg-emerald-400 px-5 text-[15px] font-semibold tracking-tight text-zinc-950 shadow-[0_0_0_1px_rgba(52,211,153,0.25),0_10px_30px_-12px_rgba(52,211,153,0.55)] transition-all duration-200 hover:bg-emerald-300"
+                >
+                  Visiter le site
+                  <ExternalLink className="size-4" aria-hidden />
+                </a>
+              ) : null}
+              <CtaButton
+                href="/#contact"
+                variant={project.url ? "secondary" : "primary"}
+              >
+                Obtenir mon audit gratuit
+              </CtaButton>
+            </div>
+            {project.conceptual ? (
+              <p className="mt-4 max-w-md text-sm text-zinc-500">
+                Ceci est un exemple d’interface, pas un site client publié. Il
+                illustre le type de parcours que nous concevons pour ce métier.
+              </p>
+            ) : (
+              <p className="mt-4 max-w-md text-sm text-zinc-500">
+                Site conçu pour une entreprise locale de rénovation, avec un
+                parcours pensé pour générer des demandes de devis.
+              </p>
+            )}
           </div>
           <div className="relative">
-            <LaptopFrame>
-              <MiniSite theme={project.theme} density="desktop" />
-            </LaptopFrame>
-            <div className="mt-6 flex justify-center sm:absolute sm:-bottom-6 sm:-left-4 sm:mt-0">
-              <PhoneFrame>
-                <MiniSite theme={project.theme} density="mobile" />
-              </PhoneFrame>
-            </div>
+            {project.previews ? (
+              <ProjectImagePreview
+                desktop={project.previews.desktop}
+                mobile={project.previews.mobile}
+                alt={`Aperçu du site ${project.name}`}
+              />
+            ) : project.theme ? (
+              <>
+                <LaptopFrame>
+                  <MiniSite theme={project.theme} density="desktop" />
+                </LaptopFrame>
+                <div className="mt-6 flex justify-center sm:absolute sm:-bottom-6 sm:-left-4 sm:mt-0">
+                  <PhoneFrame>
+                    <MiniSite theme={project.theme} density="mobile" />
+                  </PhoneFrame>
+                </div>
+              </>
+            ) : null}
           </div>
         </div>
       </Container>

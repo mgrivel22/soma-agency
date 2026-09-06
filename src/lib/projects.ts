@@ -1,4 +1,4 @@
-export type ProjectTheme = "plumber" | "renovation" | "landscaper" | "electrician";
+export type ProjectTheme = "plumber" | "electrician";
 
 export type Project = {
   slug: string;
@@ -7,11 +7,37 @@ export type Project = {
   objective: string;
   summary: string;
   features: string[];
-  conceptual: true;
-  theme: ProjectTheme;
+  conceptual: boolean;
+  theme?: ProjectTheme;
+  url?: string;
+  previews?: {
+    desktop: string;
+    mobile: string;
+  };
 };
 
 export const projects: Project[] = [
+  {
+    slug: "apex-renovation",
+    name: "Apex Rénovation",
+    sector: "Rénovation",
+    objective:
+      "Générer des demandes de devis pour une entreprise de rénovation globale et second œuvre dans le Gard et l’Hérault.",
+    summary:
+      "Site vitrine orienté conversion pour Apex Rénovation : hero fort, preuves de confiance (décennale, RGE, avis Google) et prise de contact rapide sur mobile comme sur desktop.",
+    features: [
+      "Demande de devis",
+      "Zones d’intervention",
+      "Preuves de confiance",
+      "Optimisation mobile",
+    ],
+    conceptual: false,
+    url: "https://apex-renov.netlify.app/",
+    previews: {
+      desktop: "/projets/apex-renovation/desktop.jpg",
+      mobile: "/projets/apex-renovation/mobile.jpg",
+    },
+  },
   {
     slug: "artisan-plombier",
     name: "Artisan plombier",
@@ -28,40 +54,6 @@ export const projects: Project[] = [
     ],
     conceptual: true,
     theme: "plumber",
-  },
-  {
-    slug: "entreprise-renovation",
-    name: "Entreprise de rénovation",
-    sector: "Rénovation",
-    objective:
-      "Présenter le savoir-faire avec clarté et faciliter la prise de contact pour un projet de travaux.",
-    summary:
-      "Mise en avant des types de chantiers, d’une galerie de réalisations et d’un formulaire de demande d’étude.",
-    features: [
-      "Galerie de chantiers",
-      "Demande d’étude",
-      "Présentation de l’équipe",
-      "Parcours mobile fluide",
-    ],
-    conceptual: true,
-    theme: "renovation",
-  },
-  {
-    slug: "paysagiste",
-    name: "Paysagiste",
-    sector: "Paysage",
-    objective:
-      "Montrer le style de l’entreprise et convertir les visites en demandes de rendez-vous.",
-    summary:
-      "Direction artistique végétale, photos mises en valeur et prise de contact simple pour un devis d’aménagement.",
-    features: [
-      "Portfolio visuel",
-      "Demande de rendez-vous",
-      "Prestations détaillées",
-      "Carte d’intervention",
-    ],
-    conceptual: true,
-    theme: "landscaper",
   },
   {
     slug: "electricien",
@@ -84,4 +76,8 @@ export const projects: Project[] = [
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);
+}
+
+export function getConceptualProjects() {
+  return projects.filter((project) => project.conceptual && project.theme);
 }

@@ -28,28 +28,6 @@ const themes: Record<
     sub: "Devis clair. Numéro visible. Réponse directe.",
     services: ["Dépannage", "Salle de bain", "Chauffe-eau"],
   },
-  renovation: {
-    brand: "#3f2a1d",
-    accent: "#b45309",
-    accentText: "#fff7ed",
-    hero: "#4a3324",
-    bar: "#2a1b12",
-    company: "Atelier Rénovation",
-    headline: "Rénovation intérieure, de l’étude au chantier",
-    sub: "Un interlocuteur. Un planning. Un projet cadré.",
-    services: ["Cuisine", "Salle de bain", "Second œuvre"],
-  },
-  landscaper: {
-    brand: "#143528",
-    accent: "#3f7a4a",
-    accentText: "#f4faf5",
-    hero: "#1b4332",
-    bar: "#0f241b",
-    company: "Jardin & Terrasse",
-    headline: "Aménagements extérieurs pensés pour durer",
-    sub: "Entretien, création de jardins et terrasses.",
-    services: ["Création", "Entretien", "Terrasses"],
-  },
   electrician: {
     brand: "#1c2433",
     accent: "#c2410c",
@@ -221,6 +199,41 @@ export function ProjectMockup({ theme }: { theme: ProjectTheme }) {
       <div className="pointer-events-none absolute right-3 bottom-2 hidden sm:block">
         <PhoneFrame className="w-[86px] shadow-xl">
           <MiniSite theme={theme} density="mobile" />
+        </PhoneFrame>
+      </div>
+    </div>
+  );
+}
+
+export function ProjectImagePreview({
+  desktop,
+  mobile,
+  alt,
+}: {
+  desktop: string;
+  mobile: string;
+  alt: string;
+}) {
+  return (
+    <div className="relative overflow-hidden bg-zinc-950">
+      <LaptopFrame className="p-4 pb-8 sm:p-5">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={desktop}
+          alt={alt}
+          className="h-full w-full object-cover object-top"
+          loading="lazy"
+        />
+      </LaptopFrame>
+      <div className="pointer-events-none absolute right-3 bottom-2 hidden sm:block">
+        <PhoneFrame className="w-[86px] shadow-xl">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={mobile}
+            alt=""
+            className="h-full w-full object-cover object-top"
+            loading="lazy"
+          />
         </PhoneFrame>
       </div>
     </div>

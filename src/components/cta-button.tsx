@@ -24,10 +24,12 @@ export function CtaButton({
   className,
   onClick,
 }: CtaButtonProps) {
+  const external = href.startsWith("http");
   return (
     <Link
       href={href}
       onClick={onClick}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className={cn(
         "inline-flex h-12 min-h-12 items-center justify-center rounded-xl px-5 text-[15px] font-semibold tracking-tight transition-all duration-200 active:translate-y-px",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
