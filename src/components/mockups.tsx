@@ -179,11 +179,22 @@ export function HeroDevices() {
   return (
     <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
       <LaptopFrame>
-        <MiniSite theme="plumber" density="desktop" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/projets/verdure-design/desktop.jpg"
+          alt="Aperçu d’un site conçu par Soma Digital pour un paysagiste"
+          className="h-full w-full object-cover object-top"
+          fetchPriority="high"
+        />
       </LaptopFrame>
       <div className="pointer-events-none absolute -right-1 -bottom-8 hidden sm:block md:-right-4 lg:-right-2 xl:-right-6">
         <PhoneFrame className="w-[118px] md:w-[136px] lg:w-[148px]">
-          <MiniSite theme="plumber" density="mobile" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/projets/verdure-design/mobile.jpg"
+            alt=""
+            className="h-full w-full object-cover object-top"
+          />
         </PhoneFrame>
       </div>
     </div>
