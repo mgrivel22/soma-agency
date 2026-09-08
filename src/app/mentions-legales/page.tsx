@@ -49,8 +49,9 @@ export default function MentionsLegalesPage() {
             <p className="mt-2">
               L’ensemble des contenus de ce site (textes, identités visuelles,
               maquettes, code) est protégé. Toute reproduction non autorisée est
-              interdite. Les exemples de réalisations présentés sont des projets
-              conceptuels, clairement identifiés comme tels.
+              interdite. Chaque exemple présenté dans les réalisations indique
+              clairement s’il s’agit d’un site en ligne ou d’un projet
+              conceptuel.
             </p>
           </section>
           <section>

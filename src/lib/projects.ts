@@ -60,28 +60,28 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "electricien",
-    name: "Électricien",
-    sector: "Électricité",
+    slug: "verdure-design",
+    name: "Verdure & Design",
+    sector: "Paysagiste",
     objective:
-      "Rendre les urgences et les demandes de devis accessibles en quelques secondes, surtout sur téléphone.",
+      "Valoriser le savoir-faire d’un paysagiste à Aix-en-Provence et déclencher des demandes de devis pour des projets d’aménagement extérieur.",
     summary:
-      "Hiérarchie nette entre dépannage, installation et mise aux normes, avec un accès direct au contact.",
+      "Direction artistique végétale et haut de gamme : photos de chantiers mises en valeur, prestations lisibles et prise de contact directe par téléphone ou devis en ligne.",
     features: [
-      "Appel d’urgence",
-      "Devis en ligne",
-      "Mise aux normes",
-      "Optimisation mobile",
+      "Bouton d’appel",
+      "Devis gratuit sous 48h",
+      "Galerie de réalisations",
+      "Zone d’intervention",
     ],
-    conceptual: true,
-    theme: "electrician",
+    conceptual: false,
+    url: "https://verdure-design.netlify.app/",
+    previews: {
+      desktop: "/projets/verdure-design/desktop.jpg",
+      mobile: "/projets/verdure-design/mobile.jpg",
+    },
   },
 ];
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);
-}
-
-export function getConceptualProjects() {
-  return projects.filter((project) => project.conceptual && project.theme);
 }
