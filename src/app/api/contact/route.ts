@@ -8,9 +8,27 @@ import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
 
+// Boîte de réception Formspree du compte Soma Digital. Surchargée par
+// FORMSPREE_ENDPOINT si un autre formulaire doit recevoir les demandes.
+const DEFAULT_FORMSPREE_ENDPOINT = "https://formspree.io/f/xaeylybo";
+
 function asAbsoluteUrl(website?: string) {
   if (!website) return undefined;
   return website.startsWith("http") ? website : `https://${website}`;
+}
+
+async function postToFormspree(endpoint: string, body: unknown) {
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  if (!response.ok) {
+    throw new Error(`Formspree error ${response.status}`);
+  }
 }
 
 async function deliver(payload: Omit<ContactPayload, "honeypot">) {
@@ -27,17 +45,7 @@ async function deliver(payload: Omit<ContactPayload, "honeypot">) {
   };
 
   if (formspree) {
-    const response = await fetch(formspree, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(labeled),
-    });
-    if (!response.ok) {
-      throw new Error(`Formspree error ${response.status}`);
-    }
+    await postToFormspree(formspree, labeled);
     return;
   }
 
@@ -57,15 +65,7 @@ async function deliver(payload: Omit<ContactPayload, "honeypot">) {
     return;
   }
 
-  // Sans endpoint, une demande serait perdue en silence : mieux vaut échouer
-  // et proposer le téléphone au visiteur.
-  if (process.env.NODE_ENV === "production") {
-    throw new Error(
-      "Aucun endpoint de contact configuré (FORMSPREE_ENDPOINT ou CONTACT_WEBHOOK_URL)",
-    );
-  }
-
-  console.info("[contact] Demande reçue (mode local, aucun endpoint configuré)", labeled);
+  await postToFormspree(DEFAULT_FORMSPREE_ENDPOINT, labeled);
 }
 
 export async function POST(request: Request) {

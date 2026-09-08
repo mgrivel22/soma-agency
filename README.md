@@ -22,19 +22,19 @@ npm start
 
 ## Formulaire de contact
 
-Par défaut, l’envoi du formulaire est validé côté serveur et journalisé en local. Pour recevoir les demandes en production, créez un fichier `.env.local` :
+Les demandes sont validées côté serveur (route `/api/contact`) puis envoyées au formulaire Formspree de Soma Digital. Aucune configuration n’est nécessaire pour que le formulaire fonctionne, en local comme en production.
+
+Pour rediriger les demandes ailleurs, créez un fichier `.env.local` :
 
 ```bash
 cp .env.example .env.local
 ```
 
-Options prévues :
-
-- `FORMSPREE_ENDPOINT` : URL Formspree (`https://formspree.io/f/xxxxxxxx`)
+- `FORMSPREE_ENDPOINT` : autre formulaire Formspree (`https://formspree.io/f/xxxxxxxx`)
 - `CONTACT_WEBHOOK_URL` : webhook personnalisé (Tally, Make, n8n, API interne…)
 - `NEXT_PUBLIC_SITE_URL` : URL canonique du site (SEO, sitemap)
 
-Sans ces variables, le formulaire affiche tout de même la confirmation après validation — pratique en local.
+Si l’envoi échoue, le visiteur voit un message d’erreur avec le numéro de téléphone : aucune demande n’est perdue en silence.
 
 ## Stack
 
