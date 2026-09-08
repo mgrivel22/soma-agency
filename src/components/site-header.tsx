@@ -5,7 +5,7 @@ import { Logo } from "@/components/logo";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -50,6 +50,13 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
+          <a
+            href={siteConfig.phone.href}
+            className="hidden items-center gap-2 rounded-lg px-2 py-2 text-sm font-semibold text-zinc-100 transition-colors hover:text-emerald-300 xl:inline-flex"
+          >
+            <Phone className="size-4 text-emerald-400" aria-hidden />
+            {siteConfig.phone.display}
+          </a>
           <CtaButton
             href="/#contact"
             className="hidden h-10 px-4 text-sm sm:inline-flex lg:h-11 lg:px-5 lg:text-[15px]"
@@ -92,6 +99,14 @@ export function SiteHeader() {
                   {item.label}
                 </Link>
               ))}
+              <a
+                href={siteConfig.phone.href}
+                onClick={() => setOpen(false)}
+                className="mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-white/12 bg-white/[0.04] text-[15px] font-semibold text-zinc-100"
+              >
+                <Phone className="size-4 text-emerald-400" aria-hidden />
+                {siteConfig.phone.display}
+              </a>
               <CtaButton
                 href="/#contact"
                 className="mt-2 w-full"

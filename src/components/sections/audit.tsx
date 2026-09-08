@@ -1,5 +1,6 @@
 import { CtaButton } from "@/components/cta-button";
 import { Container, FadeIn } from "@/components/ui-primitives";
+import { siteConfig } from "@/lib/site";
 
 export function AuditSection() {
   return (
@@ -23,6 +24,15 @@ export function AuditSection() {
               </CtaButton>
               <p className="mt-4 text-sm text-zinc-500">
                 Sans engagement. Réponse sous 24 h ouvrées.
+              </p>
+              <p className="mt-6 text-sm text-zinc-400">
+                Ou appelez-nous au{" "}
+                <a
+                  href={siteConfig.phone.href}
+                  className="font-semibold text-emerald-400 transition-colors hover:text-emerald-300"
+                >
+                  {siteConfig.phone.display}
+                </a>
               </p>
             </div>
           </div>

@@ -3,6 +3,7 @@ import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { JsonLd } from "@/components/json-ld";
+import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import { MotionProvider } from "@/components/motion-provider";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -86,6 +87,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             {children}
           </div>
           <SiteFooter />
+          <MobileCtaBar />
         </MotionProvider>
       </body>
     </html>

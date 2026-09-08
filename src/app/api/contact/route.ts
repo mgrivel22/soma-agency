@@ -1,4 +1,8 @@
-import { labelForOption, validateContactPayload } from "@/lib/contact";
+import {
+  labelForOption,
+  validateContactPayload,
+  type ContactPayload,
+} from "@/lib/contact";
 import { siteConfig } from "@/lib/site";
 import { NextResponse } from "next/server";
 
@@ -9,19 +13,7 @@ function asAbsoluteUrl(website?: string) {
   return website.startsWith("http") ? website : `https://${website}`;
 }
 
-async function deliver(payload: {
-  name: string;
-  company: string;
-  activity: string;
-  city: string;
-  phone: string;
-  email: string;
-  website?: string;
-  goal: string;
-  budget: string;
-  timeline: string;
-  message?: string;
-}) {
+async function deliver(payload: Omit<ContactPayload, "honeypot">) {
   const formspree = process.env.FORMSPREE_ENDPOINT;
   const webhook = process.env.CONTACT_WEBHOOK_URL;
 
@@ -31,7 +23,7 @@ async function deliver(payload: {
     goal: labelForOption("goals", payload.goal),
     budget: labelForOption("budgets", payload.budget),
     timeline: labelForOption("timelines", payload.timeline),
-    _subject: `Audit gratuit — ${payload.company}`,
+    _subject: `Audit gratuit — ${payload.company ?? payload.name}`,
   };
 
   if (formspree) {
@@ -63,6 +55,14 @@ async function deliver(payload: {
       throw new Error(`Webhook error ${response.status}`);
     }
     return;
+  }
+
+  // Sans endpoint, une demande serait perdue en silence : mieux vaut échouer
+  // et proposer le téléphone au visiteur.
+  if (process.env.NODE_ENV === "production") {
+    throw new Error(
+      "Aucun endpoint de contact configuré (FORMSPREE_ENDPOINT ou CONTACT_WEBHOOK_URL)",
+    );
   }
 
   console.info("[contact] Demande reçue (mode local, aucun endpoint configuré)", labeled);
@@ -101,7 +101,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         ok: false,
-        message: "L’envoi a échoué. Réessayez dans quelques minutes.",
+        message: `L’envoi a échoué. Appelez-nous au ${siteConfig.phone.display} ou réessayez dans quelques minutes.`,
       },
       { status: 502 },
     );

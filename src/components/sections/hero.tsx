@@ -3,6 +3,7 @@
 import { CtaButton } from "@/components/cta-button";
 import { HeroDevices } from "@/components/mockups";
 import { Container } from "@/components/ui-primitives";
+import { siteConfig } from "@/lib/site";
 import { motion, useReducedMotion } from "framer-motion";
 import { Smartphone, Sparkles, Zap } from "lucide-react";
 
@@ -50,6 +51,15 @@ export function HeroSection() {
                 Voir nos réalisations
               </CtaButton>
             </div>
+            <p className="mt-4 text-sm text-zinc-400">
+              Ou appelez-nous directement au{" "}
+              <a
+                href={siteConfig.phone.href}
+                className="font-semibold text-zinc-100 transition-colors hover:text-emerald-300"
+              >
+                {siteConfig.phone.display}
+              </a>
+            </p>
             <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
               {reassurances.map((item) => (
                 <li

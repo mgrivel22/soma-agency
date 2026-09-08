@@ -24,6 +24,11 @@ export const siteConfig = {
   tagline: "Création de sites web pour artisans, entreprises du BTP et entreprises locales.",
   url: resolveSiteUrl(),
   email: "contact@somadigital.fr",
+  phone: {
+    display: "07 45 13 58 91",
+    href: "tel:+33745135891",
+    e164: "+33745135891",
+  },
   title:
     "Soma Digital | Création de sites web pour artisans et entreprises locales",
   description:

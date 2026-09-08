@@ -9,6 +9,14 @@ export function JsonLd() {
     description: siteConfig.description,
     url: siteConfig.url,
     email: siteConfig.email,
+    telephone: siteConfig.phone.e164,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: siteConfig.phone.e164,
+      contactType: "sales",
+      areaServed: "FR",
+      availableLanguage: "French",
+    },
     areaServed: {
       "@type": "Country",
       name: "France",
