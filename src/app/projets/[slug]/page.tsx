@@ -117,8 +117,8 @@ export default async function ProjectPage({ params }: Props) {
               </p>
             ) : (
               <p className="mt-4 max-w-md text-sm text-zinc-500">
-                Site conçu pour une entreprise locale de rénovation, avec un
-                parcours pensé pour générer des demandes de devis.
+                Site conçu pour une entreprise locale, avec un parcours pensé
+                pour générer des demandes de devis.
               </p>
             )}
           </div>

@@ -39,21 +39,25 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "artisan-plombier",
-    name: "Artisan plombier",
+    slug: "plombier-toulouse",
+    name: "Urg’Eau Toulouse",
     sector: "Plomberie",
     objective:
-      "Inspirer confiance dès la première visite et rendre l’appel ou la demande de devis immédiats.",
+      "Capter les demandes de dépannage urgent à Toulouse et transformer chaque visite en appel ou en demande de devis.",
     summary:
-      "Interface claire, numéro visible, zones d’intervention et parcours pensé pour un visiteur qui a un problème à résoudre maintenant.",
+      "Site vitrine pour un plombier chauffagiste : numéro visible en permanence, promesse d’intervention claire et parcours pensé pour un visiteur pressé, souvent sur téléphone.",
     features: [
-      "Bouton d’appel",
-      "Formulaire de devis",
-      "Pages services",
-      "Affichage mobile prioritaire",
+      "Bouton d’appel permanent",
+      "Devis en ligne",
+      "Zone d’intervention",
+      "Optimisation mobile",
     ],
-    conceptual: true,
-    theme: "plumber",
+    conceptual: false,
+    url: "https://plombier-toulouse.netlify.app/",
+    previews: {
+      desktop: "/projets/plombier-toulouse/desktop.jpg",
+      mobile: "/projets/plombier-toulouse/mobile.jpg",
+    },
   },
   {
     slug: "electricien",
