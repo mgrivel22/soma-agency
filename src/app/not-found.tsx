@@ -6,13 +6,11 @@ export default function NotFound() {
   return (
     <main className="flex flex-1 items-center py-24">
       <Container className="max-w-xl text-center">
-        <p className="text-sm font-semibold tracking-[0.16em] text-emerald-400 uppercase">
-          404
-        </p>
-        <h1 className="mt-3 text-3xl font-semibold text-zinc-50">
+        <p className="text-sm font-medium text-copper-dark">404</p>
+        <h1 className="mt-3 font-heading text-3xl font-semibold text-foreground">
           Page introuvable
         </h1>
-        <p className="mt-4 text-zinc-400">
+        <p className="mt-4 text-muted-foreground">
           Cette page n’existe pas. Revenez à l’accueil pour demander un audit ou
           consulter les exemples de sites.
         </p>
@@ -20,7 +18,7 @@ export default function NotFound() {
           <CtaButton href="/">Retour à l’accueil</CtaButton>
           <Link
             href="/#contact"
-            className="inline-flex h-12 items-center justify-center rounded-xl px-5 text-[15px] font-semibold text-zinc-200 ring-1 ring-white/10 transition hover:bg-white/5"
+            className="inline-flex h-12 items-center justify-center border border-border px-5 text-[15px] font-semibold text-foreground transition hover:bg-muted"
           >
             Demander un audit
           </Link>

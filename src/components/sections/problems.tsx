@@ -1,4 +1,4 @@
-import { Container, FadeIn, SectionEyebrow } from "@/components/ui-primitives";
+import { Container } from "@/components/ui-primitives";
 import { MonitorSmartphone, MousePointerClick, Smartphone } from "lucide-react";
 
 const problems = [
@@ -21,33 +21,28 @@ const problems = [
 
 export function ProblemsSection() {
   return (
-    <section className="border-t border-white/6 py-20 sm:py-28">
+    <section className="border-t border-border py-20 sm:py-28">
       <Container>
-        <FadeIn className="mx-auto max-w-2xl text-center">
-          <SectionEyebrow>Le constat</SectionEyebrow>
-          <h2 className="text-3xl font-semibold text-zinc-50 sm:text-4xl">
+        <div className="max-w-2xl">
+          <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
             Votre site doit travailler pour votre entreprise.
           </h2>
-        </FadeIn>
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {problems.map((item, index) => (
-            <FadeIn key={item.title} delay={index * 0.08}>
-              <article className="h-full rounded-2xl border border-white/8 bg-zinc-900/70 p-6 shadow-[0_8px_40px_-24px_rgba(0,0,0,0.8)]">
-                <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-emerald-400/10 text-emerald-400 ring-1 ring-emerald-400/15">
-                  <item.icon className="size-5" aria-hidden />
-                </div>
-                <h3 className="text-lg font-semibold text-zinc-50">{item.title}</h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-zinc-400">{item.text}</p>
-              </article>
-            </FadeIn>
+        </div>
+        <div className="mt-12 grid gap-px bg-border md:grid-cols-3">
+          {problems.map((item) => (
+            <article key={item.title} className="bg-background p-6 sm:p-8">
+              <item.icon className="size-5 text-copper-dark" aria-hidden />
+              <h3 className="mt-5 font-heading text-lg font-semibold text-foreground">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{item.text}</p>
+            </article>
           ))}
         </div>
-        <FadeIn className="mx-auto mt-12 max-w-2xl text-center">
-          <p className="text-base leading-relaxed text-zinc-300 sm:text-lg">
-            Soma Digital transforme ces problèmes en une présence en ligne claire,
-            professionnelle et orientée conversion.
-          </p>
-        </FadeIn>
+        <p className="mt-12 max-w-2xl text-base leading-relaxed text-foreground sm:text-lg">
+          Soma Digital transforme ces problèmes en une présence en ligne claire,
+          professionnelle et orientée conversion.
+        </p>
       </Container>
     </section>
   );

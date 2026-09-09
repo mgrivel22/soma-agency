@@ -135,19 +135,19 @@ export function LaptopFrame({
 }) {
   return (
     <div className={cn("w-full", className)}>
-      <div className="rounded-[18px] bg-zinc-800 p-[10px] shadow-[0_30px_80px_-28px_rgba(0,0,0,0.85)] ring-1 ring-white/10">
-        <div className="relative overflow-hidden rounded-[10px] bg-zinc-950">
-          <div className="flex items-center gap-1.5 border-b border-white/5 bg-zinc-900 px-3 py-1.5">
-            <span className="size-1.5 rounded-full bg-zinc-600" />
-            <span className="size-1.5 rounded-full bg-zinc-600" />
-            <span className="size-1.5 rounded-full bg-zinc-600" />
-            <span className="mx-auto h-3 w-1/2 max-w-[180px] rounded-full bg-zinc-800" />
+      <div className="rounded-[18px] bg-[#2a3540] p-[10px] shadow-[0_24px_50px_-28px_rgba(22,35,46,0.55)] ring-1 ring-black/20">
+        <div className="relative overflow-hidden rounded-[10px] bg-anchor">
+          <div className="flex items-center gap-1.5 border-b border-white/8 bg-[#1e2c38] px-3 py-1.5">
+            <span className="size-1.5 rounded-full bg-white/25" />
+            <span className="size-1.5 rounded-full bg-white/25" />
+            <span className="size-1.5 rounded-full bg-white/25" />
+            <span className="mx-auto h-3 w-1/2 max-w-[180px] rounded-full bg-white/10" />
           </div>
           <div className="aspect-[16/10]">{children}</div>
         </div>
       </div>
-      <div className="relative mx-auto h-3 w-[28%] rounded-b-md bg-zinc-800">
-        <div className="absolute inset-x-6 -bottom-1 h-1 rounded-full bg-zinc-900" />
+      <div className="relative mx-auto h-3 w-[28%] rounded-b-md bg-[#2a3540]">
+        <div className="absolute inset-x-6 -bottom-1 h-1 rounded-full bg-anchor" />
       </div>
     </div>
   );
@@ -163,11 +163,11 @@ export function PhoneFrame({
   return (
     <div
       className={cn(
-        "relative w-[148px] overflow-hidden rounded-[1.7rem] bg-zinc-900 p-[7px] shadow-[0_24px_50px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/12",
+        "relative w-[148px] overflow-hidden rounded-[1.7rem] bg-anchor p-[7px] shadow-[0_20px_40px_-20px_rgba(22,35,46,0.7)] ring-1 ring-white/10",
         className,
       )}
     >
-      <div className="absolute top-2 left-1/2 z-10 h-3.5 w-16 -translate-x-1/2 rounded-full bg-zinc-950" />
+      <div className="absolute top-2 left-1/2 z-10 h-3.5 w-16 -translate-x-1/2 rounded-full bg-[#0e1620]" />
       <div className="aspect-[9/19] overflow-hidden rounded-[1.3rem] bg-zinc-100">
         {children}
       </div>
@@ -203,7 +203,7 @@ export function HeroDevices() {
 
 export function ProjectMockup({ theme }: { theme: ProjectTheme }) {
   return (
-    <div className="relative overflow-hidden bg-zinc-950">
+    <div className="relative overflow-hidden bg-muted">
       <LaptopFrame className="p-4 pb-8 sm:p-5">
         <MiniSite theme={theme} density="desktop" />
       </LaptopFrame>
@@ -226,7 +226,7 @@ export function ProjectImagePreview({
   alt: string;
 }) {
   return (
-    <div className="relative overflow-hidden bg-zinc-950">
+    <div className="relative overflow-hidden bg-muted">
       <LaptopFrame className="p-4 pb-8 sm:p-5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

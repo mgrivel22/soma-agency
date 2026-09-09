@@ -4,17 +4,19 @@ import Link from "next/link";
 type CtaButtonProps = {
   href?: string;
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "on-dark";
   className?: string;
   onClick?: () => void;
 };
 
 const variants = {
   primary:
-    "bg-emerald-400 text-zinc-950 shadow-[0_0_0_1px_rgba(52,211,153,0.25),0_10px_30px_-12px_rgba(52,211,153,0.55)] hover:bg-emerald-300 hover:shadow-[0_0_0_1px_rgba(110,231,183,0.35),0_12px_32px_-10px_rgba(52,211,153,0.65)]",
+    "bg-primary text-primary-foreground shadow-[inset_0_-1px_0_rgba(22,35,46,0.12)] hover:bg-[#c9964a]",
   secondary:
-    "border border-white/12 bg-white/[0.04] text-zinc-100 hover:border-white/20 hover:bg-white/[0.07]",
-  ghost: "text-zinc-200 hover:bg-white/[0.06] hover:text-white",
+    "border border-border bg-card text-foreground hover:border-copper-dark/40 hover:bg-muted",
+  ghost: "text-foreground hover:bg-muted",
+  "on-dark":
+    "border border-white/20 bg-transparent text-anchor-foreground hover:border-white/40 hover:bg-white/8",
 };
 
 export function CtaButton({
@@ -31,8 +33,8 @@ export function CtaButton({
       onClick={onClick}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className={cn(
-        "inline-flex h-12 min-h-12 items-center justify-center rounded-xl px-5 text-[15px] font-semibold tracking-tight transition-all duration-200 active:translate-y-px",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950",
+        "inline-flex h-12 min-h-12 items-center justify-center rounded-md px-5 text-[15px] font-semibold tracking-tight transition-colors duration-200 active:translate-y-px",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         variants[variant],
         className,
       )}

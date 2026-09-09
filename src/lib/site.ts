@@ -21,6 +21,7 @@ function resolveSiteUrl() {
 
 export const siteConfig = {
   name: "Soma Digital",
+  founder: "Mathieu",
   tagline: "Création de sites web pour artisans, entreprises du BTP et entreprises locales.",
   url: resolveSiteUrl(),
   email: "mgrivel22@gmail.com",
@@ -32,7 +33,7 @@ export const siteConfig = {
   title:
     "Soma Digital | Création de sites web pour artisans et entreprises locales",
   description:
-    "Soma Digital crée des sites web modernes, rapides et orientés conversion pour les artisans, entreprises du BTP et entreprises locales.",
+    "Soma Digital crée des sites web modernes, rapides et orientés conversion pour les artisans, entreprises du BTP et entreprises locales. Offre de lancement : site vitrine dès 490 € HT.",
   nav: [
     { href: "/#realisations", label: "Réalisations" },
     { href: "/#methode", label: "Notre méthode" },
@@ -50,7 +51,7 @@ export const formOptions = {
     { value: "autre", label: "Autre" },
   ],
   budgets: [
-    { value: "moins-1000", label: "Moins de 1 000 €" },
+    { value: "lancement", label: "Offre de lancement (490 €)" },
     { value: "1000-1500", label: "1 000–1 500 €" },
     { value: "1500-2500", label: "1 500–2 500 €" },
     { value: "2500-plus", label: "2 500 €+" },

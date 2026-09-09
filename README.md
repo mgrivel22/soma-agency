@@ -2,7 +2,9 @@
 
 Site vitrine de **Soma Digital**, agence spécialisée dans la création de sites web pour artisans, entreprises du BTP et entreprises de services locaux.
 
-L’objectif du site est de générer des demandes d’audit gratuit et de contact. Les exemples de réalisations sont clairement indiqués comme **projets conceptuels**.
+L’objectif du site est de générer des demandes d’audit gratuit et de contact. Les exemples de réalisations sont indiqués comme **projets de démonstration**.
+
+Offre de lancement : site vitrine à **490 € HT** (tarif habituel 1 190 € HT), 5 places, en contrepartie d’un témoignage.
 
 ## Lancer le projet
 

@@ -3,39 +3,40 @@
 import { CtaButton } from "@/components/cta-button";
 import { HeroDevices } from "@/components/mockups";
 import { Container } from "@/components/ui-primitives";
+import { projects } from "@/lib/projects";
 import { siteConfig } from "@/lib/site";
 import { motion, useReducedMotion } from "framer-motion";
-import { Smartphone, Sparkles, Zap } from "lucide-react";
+import { Smartphone, Sparkles, Tag, Zap } from "lucide-react";
+import Link from "next/link";
 
 const reassurances = [
   { icon: Sparkles, label: "Design sur mesure" },
   { icon: Smartphone, label: "Optimisé mobile" },
   { icon: Zap, label: "Mise en ligne rapide" },
+  { icon: Tag, label: "Dès 490 € — offre de lancement" },
 ];
 
 export function HeroSection() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="relative overflow-hidden pb-16 pt-10 sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-20">
-      <div className="pointer-events-none absolute inset-0 bg-grid opacity-70" />
-      <div className="pointer-events-none absolute inset-0 bg-noise opacity-[0.07] mix-blend-overlay" />
-      <div className="pointer-events-none absolute -top-32 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-emerald-500/10 blur-3xl" />
+    <section className="relative overflow-hidden bg-anchor pb-16 pt-10 text-anchor-foreground sm:pb-24 sm:pt-16 lg:pb-28 lg:pt-20">
+      <div className="pointer-events-none absolute inset-0 bg-grain opacity-[0.12] mix-blend-overlay" />
       <Container className="relative">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10">
           <motion.div
-            initial={reduce ? false : { opacity: 0, y: 18 }}
+            initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-2xl"
           >
-            <p className="mb-5 inline-flex items-center rounded-full border border-emerald-400/20 bg-emerald-400/8 px-3 py-1 text-[11px] font-semibold tracking-[0.16em] text-emerald-300 uppercase">
+            <p className="mb-5 text-sm font-medium text-primary">
               Sites web pour entreprises locales
             </p>
-            <h1 className="text-[2rem] leading-[1.12] font-semibold text-zinc-50 sm:text-5xl lg:text-[3.35rem]">
+            <h1 className="font-heading text-[2rem] leading-[1.12] font-semibold sm:text-5xl lg:text-[3.35rem]">
               Un site qui transforme vos visiteurs en demandes de devis.
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-anchor-muted sm:text-lg">
               Nous créons des sites web modernes, rapides et conçus pour aider les
               artisans et entreprises locales à générer davantage de contacts.
             </p>
@@ -45,41 +46,69 @@ export function HeroSection() {
               </CtaButton>
               <CtaButton
                 href="/#realisations"
-                variant="secondary"
+                variant="on-dark"
                 className="w-full sm:w-auto"
               >
                 Voir nos réalisations
               </CtaButton>
             </div>
-            <p className="mt-4 text-sm text-zinc-400">
+            <p className="mt-4 text-sm text-anchor-muted">
               Ou appelez-nous directement au{" "}
               <a
                 href={siteConfig.phone.href}
-                className="font-semibold text-zinc-100 transition-colors hover:text-emerald-300"
+                className="font-semibold text-anchor-foreground underline decoration-primary/60 underline-offset-4 transition-colors hover:text-primary"
               >
                 {siteConfig.phone.display}
               </a>
             </p>
-            <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {reassurances.map((item) => (
                 <li
                   key={item.label}
-                  className="flex items-center gap-2.5 text-sm font-medium text-zinc-300"
+                  className="flex items-center gap-2.5 text-sm font-medium text-anchor-foreground"
                 >
-                  <item.icon className="size-4 shrink-0 text-emerald-400" aria-hidden />
+                  <item.icon className="size-4 shrink-0 text-primary" aria-hidden />
                   {item.label}
                 </li>
               ))}
             </ul>
           </motion.div>
           <motion.div
-            initial={reduce ? false : { opacity: 0, y: 28 }}
+            initial={reduce ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.65, delay: reduce ? 0 : 0.12, ease: [0.22, 1, 0.36, 1] }}
             className="pb-10 sm:pb-6 lg:pb-4"
           >
             <HeroDevices />
           </motion.div>
+        </div>
+        <div className="mt-12 border-t border-white/10 pt-8">
+          <p className="text-xs font-medium tracking-wide text-anchor-muted">
+            Exemples de sites conçus pour des métiers locaux
+          </p>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-3">
+            {projects.map((project) => (
+              <li key={project.slug}>
+                <Link
+                  href={`/#realisations`}
+                  className="group flex items-center gap-3 border border-white/10 bg-white/4 p-2 pr-3 transition-colors hover:border-primary/40"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={project.previews?.desktop}
+                    alt=""
+                    className="h-12 w-20 shrink-0 object-cover object-top"
+                  />
+                  <span className="min-w-0">
+                    <span className="block truncate text-sm font-semibold text-anchor-foreground">
+                      {project.name}
+                    </span>
+                    <span className="block text-xs text-anchor-muted">{project.sector}</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </Container>
     </section>

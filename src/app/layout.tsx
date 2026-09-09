@@ -1,15 +1,21 @@
-import type { Metadata } from "next";
-import { Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { Archivo, Geist_Mono, Inter } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { JsonLd } from "@/components/json-ld";
 import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import { MotionProvider } from "@/components/motion-provider";
 import { siteConfig } from "@/lib/site";
+import type { Metadata } from "next";
 import "./globals.css";
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+});
+
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin", "latin-ext"],
   display: "swap",
 });
@@ -46,7 +52,7 @@ export const metadata: Metadata = {
     "site vitrine entreprise locale",
     "Soma Digital",
   ],
-  authors: [{ name: siteConfig.name }],
+  authors: [{ name: siteConfig.founder }],
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -73,14 +79,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="fr"
-      className={`dark ${plusJakarta.variable} ${geistMono.variable} h-full`}
+      className={`${inter.variable} ${archivo.variable} ${geistMono.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <JsonLd />
         <MotionProvider>
           <a
             href="#contenu"
-            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
           >
             Aller au contenu
           </a>

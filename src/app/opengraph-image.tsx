@@ -14,8 +14,8 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#09090b",
-          color: "#fafafa",
+          background: "#16232E",
+          color: "#F4F2EE",
           padding: 72,
           fontFamily: "sans-serif",
         }}
@@ -33,9 +33,8 @@ export default function OpenGraphImage() {
             style={{
               width: 36,
               height: 36,
-              borderRadius: 10,
-              background: "#18181b",
-              border: "1px solid rgba(255,255,255,0.12)",
+              background: "rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.16)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -43,10 +42,9 @@ export default function OpenGraphImage() {
           >
             <div
               style={{
-                width: 14,
-                height: 14,
-                borderRadius: 4,
-                background: "#34d399",
+                width: 12,
+                height: 12,
+                background: "#B8863F",
               }}
             />
           </div>
@@ -64,9 +62,9 @@ export default function OpenGraphImage() {
           >
             Un site qui transforme vos visiteurs en demandes de devis.
           </div>
-          <div style={{ fontSize: 26, color: "#a1a1aa", maxWidth: 780 }}>
-            Création de sites web pour artisans, entreprises du BTP et entreprises
-            locales.
+          <div style={{ fontSize: 26, color: "#A8B3BC", maxWidth: 780 }}>
+            Offre de lancement : site vitrine dès 490 € HT pour artisans et
+            entreprises locales.
           </div>
         </div>
       </div>

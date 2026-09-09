@@ -1,5 +1,6 @@
-import { Container, FadeIn, SectionEyebrow } from "@/components/ui-primitives";
-import { Handshake, MapPin, Palette, Gauge } from "lucide-react";
+import { Container } from "@/components/ui-primitives";
+import { siteConfig } from "@/lib/site";
+import { Gauge, Handshake, MapPin, Palette } from "lucide-react";
 
 const reasons = [
   {
@@ -9,43 +10,52 @@ const reasons = [
   },
   {
     icon: Palette,
-    title: "Design premium",
-    text: "Votre site doit refléter la qualité de votre travail.",
+    title: "Design à votre image",
+    text: "Votre site doit refléter la qualité de votre travail, pas celle d’un modèle générique.",
   },
   {
     icon: Gauge,
-    title: "Performance",
-    text: "Un site rapide et parfaitement utilisable sur smartphone.",
+    title: "Le téléphone qui sonne",
+    text: "Bouton d’appel, formulaire, fiche Google : chaque page est faite pour déclencher une demande.",
   },
   {
     icon: Handshake,
-    title: "Accompagnement humain",
-    text: "Un interlocuteur unique pour suivre votre projet.",
+    title: "Un seul interlocuteur",
+    text: "Vous parlez à Mathieu, pas à un standard. Du premier échange jusqu’à la mise en ligne.",
   },
 ];
 
 export function WhySection() {
   return (
-    <section className="border-t border-white/6 py-20 sm:py-28">
+    <section className="border-t border-border py-20 sm:py-28">
       <Container>
-        <FadeIn className="max-w-2xl">
-          <SectionEyebrow>Pourquoi Soma Digital</SectionEyebrow>
-          <h2 className="text-3xl font-semibold text-zinc-50 sm:text-4xl">
-            Une agence de taille humaine, spécialisée dans le local.
-          </h2>
-        </FadeIn>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2">
-          {reasons.map((item, index) => (
-            <FadeIn key={item.title} delay={index * 0.06}>
-              <article className="h-full rounded-2xl border border-white/8 bg-zinc-900/70 p-6">
-                <div className="mb-4 flex size-10 items-center justify-center rounded-xl bg-white/4 text-emerald-400 ring-1 ring-white/8">
-                  <item.icon className="size-5" aria-hidden />
-                </div>
-                <h3 className="text-lg font-semibold text-zinc-50">{item.title}</h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-zinc-400">{item.text}</p>
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+          <div className="max-w-xl">
+            <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
+              Une agence de taille humaine, spécialisée dans le local.
+            </h2>
+            <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground">
+              Je m’appelle {siteConfig.founder}. J’ai créé Soma Digital pour les
+              artisans et les entreprises locales qui ont besoin d’un site clair,
+              sérieux, et qui ramène des demandes — pas d’une plateforme à
+              administrer le dimanche soir.
+            </p>
+            <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
+              Pas de discours marketing, pas de faux chiffres. Un échange, un
+              audit concret, puis un site que vous comprenez.
+            </p>
+          </div>
+          <div className="grid gap-px bg-border sm:grid-cols-2">
+            {reasons.map((item) => (
+              <article key={item.title} className="bg-background p-6">
+                <item.icon className="size-5 text-copper-dark" aria-hidden />
+                <h3 className="mt-4 font-heading text-lg font-semibold text-foreground">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">{item.text}</p>
               </article>
-            </FadeIn>
-          ))}
+            ))}
+          </div>
         </div>
       </Container>
     </section>

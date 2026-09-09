@@ -8,6 +8,7 @@ export type Project = {
   summary: string;
   features: string[];
   conceptual: boolean;
+  demonstration: boolean;
   theme?: ProjectTheme;
   url?: string;
   previews?: {
@@ -15,6 +16,12 @@ export type Project = {
     mobile: string;
   };
 };
+
+export function projectBadge(project: Pick<Project, "conceptual" | "demonstration">) {
+  if (project.demonstration) return "Projet de démonstration";
+  if (project.conceptual) return "Projet conceptuel";
+  return "Site client";
+}
 
 export const projects: Project[] = [
   {
@@ -32,6 +39,7 @@ export const projects: Project[] = [
       "Optimisation mobile",
     ],
     conceptual: false,
+    demonstration: true,
     url: "https://apex-renov.netlify.app/",
     previews: {
       desktop: "/projets/apex-renovation/desktop.jpg",
@@ -53,6 +61,7 @@ export const projects: Project[] = [
       "Optimisation mobile",
     ],
     conceptual: false,
+    demonstration: true,
     url: "https://plombier-toulouse.netlify.app/",
     previews: {
       desktop: "/projets/plombier-toulouse/desktop.jpg",
@@ -74,6 +83,7 @@ export const projects: Project[] = [
       "Zone d’intervention",
     ],
     conceptual: false,
+    demonstration: true,
     url: "https://verdure-design.netlify.app/",
     previews: {
       desktop: "/projets/verdure-design/desktop.jpg",

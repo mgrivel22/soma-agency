@@ -1,10 +1,10 @@
-import { Container, FadeIn, SectionEyebrow } from "@/components/ui-primitives";
+import { Container } from "@/components/ui-primitives";
 
 const steps = [
   {
     step: "01",
     title: "Audit",
-    text: "Nous analysons votre site actuel et votre présence en ligne.",
+    text: "Nous analysons votre site actuel et votre présence en ligne — ou, si vous n’avez pas encore de site, vos besoins et votre zone d’intervention.",
   },
   {
     step: "02",
@@ -25,32 +25,32 @@ const steps = [
 
 export function MethodSection() {
   return (
-    <section id="methode" className="scroll-mt-24 border-t border-white/6 py-20 sm:py-28">
+    <section id="methode" className="scroll-mt-24 border-t border-border py-20 sm:py-28">
       <Container>
-        <FadeIn className="max-w-2xl">
-          <SectionEyebrow>Notre méthode</SectionEyebrow>
-          <h2 className="text-3xl font-semibold text-zinc-50 sm:text-4xl">
+        <div className="max-w-2xl">
+          <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
             Simple pour vous. Efficace pour votre entreprise.
           </h2>
-        </FadeIn>
-        <ol className="relative mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        </div>
+        <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
           {steps.map((item, index) => (
-            <FadeIn key={item.step} delay={index * 0.07}>
-              <li className="relative h-full rounded-2xl border border-white/8 bg-zinc-900/70 p-6">
-                <span className="text-xs font-semibold tracking-[0.18em] text-emerald-400">
-                  {item.step}
-                </span>
-                <h3 className="mt-3 text-lg font-semibold text-zinc-50">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">{item.text}</p>
-              </li>
-            </FadeIn>
+            <li
+              key={item.step}
+              className={
+                index === 0
+                  ? "lg:pr-6"
+                  : "border-t border-border pt-8 sm:border-t-0 sm:pt-0 lg:border-l lg:px-6"
+              }
+            >
+              <span className="font-heading text-sm font-semibold text-copper-dark">{item.step}</span>
+              <h3 className="mt-3 font-heading text-lg font-semibold text-foreground">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+            </li>
           ))}
         </ol>
-        <FadeIn className="mt-10">
-          <p className="text-sm font-medium text-zinc-400">
-            Objectif : vous faire gagner du temps, pas vous ajouter du travail.
-          </p>
-        </FadeIn>
+        <p className="mt-10 text-sm font-medium text-muted-foreground">
+          Objectif : vous faire gagner du temps, pas vous ajouter du travail.
+        </p>
       </Container>
     </section>
   );
