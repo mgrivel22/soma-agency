@@ -7,7 +7,7 @@ export function AuditSection() {
     <section className="border-t border-border bg-anchor py-20 text-anchor-foreground sm:py-24">
       <Container>
         <div className="relative mx-auto max-w-2xl text-center">
-          <h2 className="font-heading text-3xl font-semibold sm:text-4xl">
+          <h2 className="font-heading text-3xl font-semibold text-anchor-foreground sm:text-4xl">
             Avant de refaire votre site, commençons par regarder ce qui peut
             être amélioré.
           </h2>
