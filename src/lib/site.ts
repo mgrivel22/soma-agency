@@ -16,14 +16,14 @@ function resolveSiteUrl() {
       : `https://${vercelUrl.replace(/\/$/, "")}`;
   }
 
-  return "https://somadigital.fr";
+  return "https://www.soma-digital.com";
 }
 
 export const siteConfig = {
   name: "Soma Digital",
   tagline: "Création de sites web pour artisans, entreprises du BTP et entreprises locales.",
   url: resolveSiteUrl(),
-  email: "contact@somadigital.fr",
+  email: "mgrivel22@gmail.com",
   phone: {
     display: "07 45 13 58 91",
     href: "tel:+33745135891",
