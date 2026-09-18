@@ -11,7 +11,7 @@ type CtaButtonProps = {
 
 const variants = {
   primary:
-    "bg-primary text-primary-foreground shadow-[inset_0_-1px_0_rgba(22,35,46,0.12)] hover:bg-[#c9964a]",
+    "bg-primary text-primary-foreground shadow-[inset_0_-1px_0_rgba(24,24,27,0.12)] hover:bg-copper-dark",
   secondary:
     "border border-border bg-card text-foreground hover:border-copper-dark/40 hover:bg-muted",
   ghost: "text-foreground hover:bg-muted",

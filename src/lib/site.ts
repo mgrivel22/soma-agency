@@ -33,7 +33,7 @@ export const siteConfig = {
   title:
     "Soma Digital | Création de sites web pour artisans et entreprises locales",
   description:
-    "Soma Digital crée des sites web modernes, rapides et orientés conversion pour les artisans, entreprises du BTP et entreprises locales. Offre de lancement : site vitrine dès 490 € HT.",
+    "Soma Digital crée des sites web modernes, rapides et orientés conversion pour les artisans, entreprises du BTP et entreprises locales. Offre de lancement : site vitrine dès 490 € HT, livré en 7 jours.",
   nav: [
     { href: "/#realisations", label: "Réalisations" },
     { href: "/#methode", label: "Notre méthode" },

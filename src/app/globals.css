@@ -52,43 +52,43 @@
 }
 
 :root {
-  --background: #f6f6f4;
-  --foreground: #16232e;
+  --background: #fafafa;
+  --foreground: #18181b;
   --card: #ffffff;
-  --card-foreground: #16232e;
+  --card-foreground: #18181b;
   --popover: #ffffff;
-  --popover-foreground: #16232e;
-  --primary: #b8863f;
-  --primary-foreground: #16232e;
-  --secondary: #eceae4;
-  --secondary-foreground: #16232e;
-  --muted: #eceae4;
-  --muted-foreground: #5a6874;
-  --accent: #eceae4;
-  --accent-foreground: #16232e;
+  --popover-foreground: #18181b;
+  --primary: #c2410c;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
   --destructive: #b42318;
-  --border: #dfdfda;
-  --input: #d4d4ce;
-  --ring: #8a5f28;
-  --anchor: #16232e;
-  --anchor-foreground: #f4f2ee;
-  --anchor-muted: #a8b3bc;
-  --copper: #b8863f;
-  --copper-dark: #8a5f28;
-  --chart-1: #b8863f;
-  --chart-2: #16232e;
-  --chart-3: #5a6874;
-  --chart-4: #8a5f28;
-  --chart-5: #d4c4a8;
+  --border: #e4e4e7;
+  --input: #d4d4d8;
+  --ring: #9a3412;
+  --anchor: #111113;
+  --anchor-foreground: #fafafa;
+  --anchor-muted: #a1a1aa;
+  --copper: #c2410c;
+  --copper-dark: #9a3412;
+  --chart-1: #c2410c;
+  --chart-2: #18181b;
+  --chart-3: #52525b;
+  --chart-4: #9a3412;
+  --chart-5: #e4e4e7;
   --radius: 0.5rem;
   --sidebar: #ffffff;
-  --sidebar-foreground: #16232e;
-  --sidebar-primary: #b8863f;
-  --sidebar-primary-foreground: #16232e;
-  --sidebar-accent: #eceae4;
-  --sidebar-accent-foreground: #16232e;
-  --sidebar-border: #dfdfda;
-  --sidebar-ring: #8a5f28;
+  --sidebar-foreground: #18181b;
+  --sidebar-primary: #c2410c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #18181b;
+  --sidebar-border: #e4e4e7;
+  --sidebar-ring: #9a3412;
 }
 
 @layer base {
@@ -107,7 +107,7 @@
 
   select option {
     background-color: #ffffff;
-    color: #16232e;
+    color: #18181b;
   }
 
   h1,

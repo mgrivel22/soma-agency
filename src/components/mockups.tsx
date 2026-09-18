@@ -135,9 +135,9 @@ export function LaptopFrame({
 }) {
   return (
     <div className={cn("w-full", className)}>
-      <div className="rounded-[18px] bg-[#2a3540] p-[10px] shadow-[0_24px_50px_-28px_rgba(22,35,46,0.55)] ring-1 ring-black/20">
+      <div className="rounded-[18px] bg-[#27272a] p-[10px] shadow-[0_24px_50px_-28px_rgba(24,24,27,0.55)] ring-1 ring-black/20">
         <div className="relative overflow-hidden rounded-[10px] bg-anchor">
-          <div className="flex items-center gap-1.5 border-b border-white/8 bg-[#1e2c38] px-3 py-1.5">
+          <div className="flex items-center gap-1.5 border-b border-white/8 bg-[#18181b] px-3 py-1.5">
             <span className="size-1.5 rounded-full bg-white/25" />
             <span className="size-1.5 rounded-full bg-white/25" />
             <span className="size-1.5 rounded-full bg-white/25" />
@@ -146,7 +146,7 @@ export function LaptopFrame({
           <div className="aspect-[16/10]">{children}</div>
         </div>
       </div>
-      <div className="relative mx-auto h-3 w-[28%] rounded-b-md bg-[#2a3540]">
+      <div className="relative mx-auto h-3 w-[28%] rounded-b-md bg-[#27272a]">
         <div className="absolute inset-x-6 -bottom-1 h-1 rounded-full bg-anchor" />
       </div>
     </div>
@@ -167,7 +167,7 @@ export function PhoneFrame({
         className,
       )}
     >
-      <div className="absolute top-2 left-1/2 z-10 h-3.5 w-16 -translate-x-1/2 rounded-full bg-[#0e1620]" />
+      <div className="absolute top-2 left-1/2 z-10 h-3.5 w-16 -translate-x-1/2 rounded-full bg-[#09090b]" />
       <div className="aspect-[9/19] overflow-hidden rounded-[1.3rem] bg-zinc-100">
         {children}
       </div>

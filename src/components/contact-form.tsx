@@ -398,7 +398,7 @@ export function ContactForm() {
         <Button
           type="submit"
           disabled={status === "loading"}
-          className="h-12 w-full rounded-md bg-primary px-6 text-[15px] font-semibold text-primary-foreground hover:bg-[#c9964a]"
+          className="h-12 w-full rounded-md bg-primary px-6 text-[15px] font-semibold text-primary-foreground hover:bg-copper-dark"
         >
           {status === "loading" ? (
             <>

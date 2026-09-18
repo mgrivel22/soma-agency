@@ -55,6 +55,7 @@ export function OfferSection() {
                 </ul>
               </div>
               <p className="mt-5 text-sm text-muted-foreground">{launchOffer.caveat}</p>
+              <p className="mt-2 text-sm font-medium text-foreground">{launchOffer.delivery}</p>
               <p className="mt-2 text-sm text-muted-foreground">{launchOffer.payment}</p>
               <p className="mt-2 text-sm font-medium text-foreground">{launchOffer.guarantee}</p>
               <CtaButton href="/#contact" className="mt-6 w-full sm:w-auto">

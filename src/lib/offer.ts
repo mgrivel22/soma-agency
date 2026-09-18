@@ -8,7 +8,8 @@ export const launchOffer = {
   exchange:
     "Tarif réduit en contrepartie de votre témoignage et du droit de présenter votre site dans nos réalisations.",
   caveat: "Le prix final dépend du contenu et des fonctionnalités du projet.",
-  payment: "50 % au démarrage, 50 % à la livraison de la maquette validée.",
+  delivery: "Livraison en 7 jours à partir de la validation du projet.",
+  payment: "50 % au démarrage, 50 % à la livraison.",
   guarantee:
     "Vous validez la maquette avant de payer le solde. Si elle ne vous convient pas, vous ne payez rien de plus.",
 } as const;
@@ -23,6 +24,7 @@ export const included = [
   "Optimisation technique SEO de base",
   "Création ou optimisation de votre fiche Google",
   "1re année de nom de domaine et d’hébergement",
+  "Livraison en 7 jours",
   "Mise en ligne et accompagnement",
 ] as const;
 
@@ -43,7 +45,7 @@ export const retainers = [
     name: "Renouvellement Simple",
     price: "19 € HT / mois",
     detail:
-      "Domaine, hébergement, sauvegardes et mises de sécurité pris en charge.",
+      "Domaine, hébergement, sauvegardes et mises à jour de sécurité pris en charge.",
   },
   {
     name: "Sérénité",

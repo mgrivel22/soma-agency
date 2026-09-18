@@ -32,7 +32,7 @@ export function SiteHeader() {
     <header
       className={cn(
         "sticky top-0 z-50 border-b bg-background/95 backdrop-blur-md transition-shadow duration-300",
-        scrolled || open ? "border-border shadow-[0_1px_0_rgba(22,35,46,0.04)]" : "border-transparent",
+        scrolled || open ? "border-border shadow-[0_1px_0_rgba(24,24,27,0.06)]" : "border-transparent",
       )}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:h-[4.25rem] sm:px-6 lg:px-8">

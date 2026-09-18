@@ -97,7 +97,7 @@ export default async function ProjectPage({ params }: Props) {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 min-h-12 items-center justify-center gap-2 bg-primary px-5 text-[15px] font-semibold tracking-tight text-primary-foreground transition-colors hover:bg-[#c9964a]"
+                  className="inline-flex h-12 min-h-12 items-center justify-center gap-2 bg-primary px-5 text-[15px] font-semibold tracking-tight text-primary-foreground transition-colors hover:bg-copper-dark"
                 >
                   Visiter le site
                   <ExternalLink className="size-4" aria-hidden />

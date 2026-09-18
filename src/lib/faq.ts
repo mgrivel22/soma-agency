@@ -7,7 +7,7 @@ export const faqs = [
   {
     question: "Combien de temps faut-il pour créer un site ?",
     answer:
-      "Comptez en moyenne 2 à 3 semaines à partir de la validation du projet. Le délai réel dépend surtout de la disponibilité de vos contenus (textes, photos, informations pratiques) et du nombre d’allers-retours sur les maquettes. Le processus est pensé pour vous demander le moins de temps possible.",
+      "La livraison prend 7 jours à partir de la validation du projet. Pour tenir ce délai, nous avons besoin de vos contenus (textes, photos, informations pratiques) dès le démarrage. Le processus est pensé pour vous demander le moins de temps possible.",
   },
   {
     question: "Est-ce que vous travaillez uniquement avec les entreprises du BTP ?",

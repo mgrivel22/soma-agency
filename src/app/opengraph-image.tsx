@@ -14,8 +14,8 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#16232E",
-          color: "#F4F2EE",
+          background: "#111113",
+          color: "#FAFAFA",
           padding: 72,
           fontFamily: "sans-serif",
         }}
@@ -44,7 +44,7 @@ export default function OpenGraphImage() {
               style={{
                 width: 12,
                 height: 12,
-                background: "#B8863F",
+                background: "#C2410C",
               }}
             />
           </div>
@@ -62,9 +62,8 @@ export default function OpenGraphImage() {
           >
             Un site qui transforme vos visiteurs en demandes de devis.
           </div>
-          <div style={{ fontSize: 26, color: "#A8B3BC", maxWidth: 780 }}>
-            Offre de lancement : site vitrine dès 490 € HT pour artisans et
-            entreprises locales.
+          <div style={{ fontSize: 26, color: "#A1A1AA", maxWidth: 780 }}>
+            Offre de lancement : site vitrine dès 490 € HT, livré en 7 jours.
           </div>
         </div>
       </div>

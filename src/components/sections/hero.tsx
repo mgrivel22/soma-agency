@@ -9,7 +9,7 @@ import Link from "next/link";
 const reassurances = [
   { icon: Sparkles, label: "Design sur mesure" },
   { icon: Smartphone, label: "Optimisé mobile" },
-  { icon: Zap, label: "Mise en ligne rapide" },
+  { icon: Zap, label: "Livré en 7 jours" },
   { icon: Tag, label: "Dès 490 € — offre de lancement" },
 ];
 

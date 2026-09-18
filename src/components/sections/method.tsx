@@ -19,7 +19,7 @@ const steps = [
   {
     step: "04",
     title: "Lancement",
-    text: "Votre nouveau site est mis en ligne et prêt à recevoir vos visiteurs.",
+    text: "Votre site est mis en ligne sous 7 jours, prêt à recevoir vos visiteurs.",
   },
 ];
 
