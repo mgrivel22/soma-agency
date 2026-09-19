@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/json-ld";
 import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import { MotionProvider } from "@/components/motion-provider";
 import { siteConfig } from "@/lib/site";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -98,6 +99,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <MobileCtaBar />
         </MotionProvider>
       </body>
+      <GoogleAnalytics gaId={siteConfig.analyticsId} />
     </html>
   );
 }

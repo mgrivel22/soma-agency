@@ -71,9 +71,14 @@ export default function PrivacyPage() {
           <section>
             <h2 className="font-heading text-lg font-semibold text-foreground">Cookies</h2>
             <p className="mt-2">
-              Ce site n’utilise pas de cookies publicitaires. Seuls des cookies
-              techniques éventuellement nécessaires au fonctionnement du site
-              peuvent être déposés.
+              Ce site n’utilise pas de cookies publicitaires. Un outil de mesure
+              d’audience, Google Analytics (identifiant {siteConfig.analyticsId}),
+              dépose des cookies pour comprendre comment les pages sont consultées
+              (pages vues, provenance, type d’appareil). Ces données sont traitées
+              par Google Ireland Limited. Vous pouvez limiter ce suivi via les
+              paramètres de votre navigateur ou les outils d’opposition proposés
+              par Google. Les cookies techniques éventuellement nécessaires au
+              fonctionnement du site peuvent également être déposés.
             </p>
           </section>
         </div>
