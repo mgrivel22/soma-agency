@@ -1,11 +1,12 @@
 import { ProjectImagePreview, ProjectMockup } from "@/components/mockups";
 import { Container } from "@/components/ui-primitives";
 import { projectBadge, projects } from "@/lib/projects";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export function ProjectsSection() {
   return (
-    <section id="realisations" className="scroll-mt-24 border-t border-border bg-card py-20 sm:py-28">
+    <section id="realisations" className="scroll-mt-24 border-t border-border bg-card py-14 sm:py-28">
       <Container>
         <div className="max-w-2xl">
           <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
@@ -14,12 +15,16 @@ export function ProjectsSection() {
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
             Des interfaces pensées pour inspirer confiance et faciliter la prise de
             contact. Ces sites sont des projets de démonstration, réalisés pour
-            illustrer notre approche métier par métier.
+            illustrer mon approche métier par métier.
           </p>
         </div>
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <p className="mt-6 flex items-center gap-1.5 text-sm text-muted-foreground md:hidden" aria-hidden>
+          Faites glisser pour voir les {projects.length} exemples
+          <ArrowRight className="size-4 text-copper-dark" />
+        </p>
+        <div className="-mx-5 mt-3 flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 pb-2 sm:-mx-6 sm:scroll-px-6 sm:px-6 md:mx-0 md:mt-12 md:grid md:grid-cols-2 md:gap-8 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3">
           {projects.map((project) => (
-            <article key={project.slug} className="flex h-full flex-col border border-border bg-background">
+            <article key={project.slug} className="flex h-full w-[86%] shrink-0 snap-start flex-col border border-border bg-background md:w-auto">
               {project.previews ? (
                 <ProjectImagePreview
                   desktop={project.previews.desktop}

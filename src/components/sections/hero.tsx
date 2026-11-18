@@ -27,7 +27,7 @@ export function HeroSection() {
               Un site qui transforme vos visiteurs en demandes de devis.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-anchor-muted sm:text-lg">
-              Nous créons des sites web modernes, rapides et conçus pour aider les
+              Je crée des sites web modernes, rapides et conçus pour aider les
               artisans et entreprises locales à générer davantage de contacts.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -39,11 +39,11 @@ export function HeroSection() {
                 variant="on-dark"
                 className="w-full sm:w-auto"
               >
-                Voir nos réalisations
+                Voir mes réalisations
               </CtaButton>
             </div>
             <p className="mt-4 text-sm text-anchor-muted">
-              Ou appelez-nous directement au{" "}
+              Ou appelez-moi directement au{" "}
               <a
                 href={siteConfig.phone.href}
                 className="font-semibold text-anchor-foreground underline decoration-primary/60 underline-offset-4 transition-colors hover:text-primary"
@@ -67,7 +67,7 @@ export function HeroSection() {
             <HeroDevices />
           </div>
         </div>
-        <div className="mt-12 border-t border-white/10 pt-8">
+        <div className="mt-12 hidden border-t border-white/10 pt-8 sm:block">
           <p className="text-xs font-medium tracking-wide text-anchor-muted">
             Exemples de sites conçus pour des métiers locaux
           </p>

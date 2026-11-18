@@ -21,14 +21,14 @@ const problems = [
 
 export function ProblemsSection() {
   return (
-    <section className="border-t border-border py-20 sm:py-28">
+    <section className="border-t border-border py-14 sm:py-28">
       <Container>
         <div className="max-w-2xl">
           <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
             Votre site doit travailler pour votre entreprise.
           </h2>
         </div>
-        <div className="mt-12 grid gap-px bg-border md:grid-cols-3">
+        <div className="mt-8 sm:mt-12 grid gap-px bg-border md:grid-cols-3">
           {problems.map((item) => (
             <article key={item.title} className="bg-background p-6 sm:p-8">
               <item.icon className="size-5 text-copper-dark" aria-hidden />
@@ -39,7 +39,7 @@ export function ProblemsSection() {
             </article>
           ))}
         </div>
-        <p className="mt-12 max-w-2xl text-base leading-relaxed text-foreground sm:text-lg">
+        <p className="mt-8 sm:mt-12 max-w-2xl text-base leading-relaxed text-foreground sm:text-lg">
           Soma Digital transforme ces problèmes en une présence en ligne claire,
           professionnelle et orientée conversion.
         </p>

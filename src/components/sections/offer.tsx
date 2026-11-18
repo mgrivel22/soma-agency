@@ -1,11 +1,11 @@
 import { CtaButton } from "@/components/cta-button";
 import { Container } from "@/components/ui-primitives";
-import { excluded, included, launchOffer, retainers } from "@/lib/offer";
+import { excluded, included, launchOffer, retainerNote, retainers } from "@/lib/offer";
 import { Check } from "lucide-react";
 
 export function OfferSection() {
   return (
-    <section id="offre" className="scroll-mt-24 border-t border-border py-20 sm:py-28">
+    <section id="offre" className="scroll-mt-24 border-t border-border py-14 sm:py-28">
       <Container>
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
           <div>
@@ -35,6 +35,9 @@ export function OfferSection() {
                     {launchOffer.price}
                   </span>
                   <span className="ml-1 text-sm text-muted-foreground">{launchOffer.tax}</span>
+                  <span className="mt-1 block text-xs text-muted-foreground">
+                    + suivi Sérénité recommandé : 39 € HT / mois
+                  </span>
                 </p>
               </div>
               <p className="mt-5 text-sm leading-relaxed text-foreground">{launchOffer.exchange}</p>
@@ -64,14 +67,20 @@ export function OfferSection() {
             </article>
             <div className="mt-8 border-t border-border pt-6">
               <h3 className="font-heading text-lg font-semibold text-foreground">
-                Après la 1re année, restez tranquille (facultatif)
+                Dès la mise en ligne, je m’occupe de votre site
               </h3>
+              <p className="mt-2 text-sm text-muted-foreground">{retainerNote}</p>
               <ul className="mt-4 divide-y divide-border border-y border-border">
                 {retainers.map((item) => (
                   <li key={item.name} className="grid gap-1 py-4 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] sm:gap-6">
                     <p className="text-sm font-semibold text-foreground">
                       {item.name}{" "}
                       <span className="font-medium text-muted-foreground">({item.price})</span>
+                      {item.recommended ? (
+                        <span className="mt-1.5 block w-fit bg-primary px-2 py-0.5 text-xs font-medium text-primary-foreground">
+                          Recommandé
+                        </span>
+                      ) : null}
                     </p>
                     <p className="text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
                   </li>

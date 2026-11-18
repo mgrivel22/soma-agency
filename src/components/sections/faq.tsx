@@ -11,7 +11,7 @@ import { faqs } from "@/lib/faq";
 
 export function FaqSection() {
   return (
-    <section id="faq" className="scroll-mt-24 border-t border-border py-20 sm:py-28">
+    <section id="faq" className="scroll-mt-24 border-t border-border py-14 sm:py-28">
       <Container>
         <div className="max-w-2xl">
           <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">

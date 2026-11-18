@@ -37,7 +37,7 @@ export const siteConfig = {
   analyticsId: "G-S0W0Y826NZ",
   nav: [
     { href: "/#realisations", label: "Réalisations" },
-    { href: "/#methode", label: "Notre méthode" },
+    { href: "/#methode", label: "Ma méthode" },
     { href: "/#offre", label: "Offre" },
     { href: "/#faq", label: "FAQ" },
   ],

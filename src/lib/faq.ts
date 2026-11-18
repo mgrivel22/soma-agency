@@ -2,17 +2,17 @@ export const faqs = [
   {
     question: "Combien coûte un site web ?",
     answer:
-      "L’offre de lancement est à 490 € HT pour un site vitrine sur mesure de 4 à 6 pages, avec la 1re année de nom de domaine et d’hébergement incluse. Le tarif habituel est de 1 190 € HT. Le prix final dépend du contenu et des fonctionnalités nécessaires (galerie, zones d’intervention, formulaires spécifiques). Après l’audit, nous vous proposons un périmètre et un tarif clairs, sans surprise.",
+      "L’offre de lancement est à 490 € HT pour un site vitrine sur mesure de 4 à 6 pages, avec la 1re année de nom de domaine et d’hébergement incluse. Le tarif habituel est de 1 190 € HT. Le prix final dépend du contenu et des fonctionnalités nécessaires (galerie, zones d’intervention, formulaires spécifiques). Après l’audit, je vous propose un périmètre et un tarif clairs, sans surprise.",
   },
   {
     question: "Combien de temps faut-il pour créer un site ?",
     answer:
-      "La livraison prend 7 jours à partir de la validation du projet. Pour tenir ce délai, nous avons besoin de vos contenus (textes, photos, informations pratiques) dès le démarrage. Le processus est pensé pour vous demander le moins de temps possible.",
+      "La livraison prend 7 jours à partir de la validation du projet. Pour tenir ce délai, j’ai besoin de vos contenus (textes, photos, informations pratiques) dès le démarrage. Le processus est pensé pour vous demander le moins de temps possible.",
   },
   {
     question: "Est-ce que vous travaillez uniquement avec les entreprises du BTP ?",
     answer:
-      "Non. Soma Digital est particulièrement spécialisé dans les artisans, les entreprises de services et les entreprises locales — plombiers, électriciens, couvreurs, paysagistes, rénovation, et métiers proches. Toute entreprise locale qui cherche un site clair, professionnel et conçu pour générer des demandes de devis peut nous contacter.",
+      "Non. Soma Digital est particulièrement spécialisé dans les artisans, les entreprises de services et les entreprises locales — plombiers, électriciens, couvreurs, paysagistes, rénovation, et métiers proches. Toute entreprise locale qui cherche un site clair, professionnel et conçu pour générer des demandes de devis peut me contacter.",
   },
   {
     question: "Est-ce que je peux modifier mon site moi-même ?",
@@ -27,12 +27,12 @@ export const faqs = [
   {
     question: "Que se passe-t-il après la mise en ligne ?",
     answer:
-      "Votre 1re année d’hébergement et de nom de domaine est déjà incluse. Ensuite, vous pouvez rester autonome — nous vous rappelons avant le renouvellement — ou choisir une formule de suivi (19 € ou 39 € HT / mois) pour la sécurité, les sauvegardes et, si besoin, les modifications de contenu. Rien n’est imposé.",
+      "Votre 1re année d’hébergement et de nom de domaine est déjà incluse. Dès la mise en ligne, je recommande la formule Sérénité (39 € HT / mois) : vos modifications de contenu sous 24 h, les sauvegardes et la sécurité, sans que vous ayez à y penser. Il existe aussi une formule Essentiel (19 € HT / mois), ou vous pouvez rester autonome — je vous préviens avant le renouvellement du domaine. Sans engagement, résiliable à tout moment.",
   },
   {
     question: "Je n’ai ni textes ni photos, comment on fait ?",
     answer:
-      "Ce n’est pas un blocage. Nous rédigeons les textes des pages à partir d’un échange (appel ou messages) et nous travaillons avec les photos que vous avez déjà — chantier, équipe, véhicules. Si une séance photo professionnelle est vraiment nécessaire, on en parle à part : ce n’est pas inclus dans l’offre de lancement.",
+      "Ce n’est pas un blocage. Je rédige les textes des pages à partir d’un échange (appel ou messages) et je travaille avec les photos que vous avez déjà — chantier, équipe, véhicules. Si une séance photo professionnelle est vraiment nécessaire, on en parle à part : ce n’est pas inclus dans l’offre de lancement.",
   },
   {
     question: "À qui appartient le site si je change de prestataire ?",

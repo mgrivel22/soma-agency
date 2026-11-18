@@ -3,7 +3,7 @@ import { Container } from "@/components/ui-primitives";
 
 export function FinalCtaSection() {
   return (
-    <section className="border-t border-border py-20 sm:py-28">
+    <section className="hidden border-t border-border py-14 sm:block sm:py-28">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-5xl">

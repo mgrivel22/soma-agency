@@ -5,15 +5,15 @@ import { Phone } from "lucide-react";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="scroll-mt-24 border-t border-border py-20 sm:py-28">
+    <section id="contact" className="scroll-mt-24 border-t border-border py-14 sm:py-28">
       <Container>
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
           <div>
             <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
-              Parlez-nous de votre projet
+              Parlez-moi de votre projet
             </h2>
             <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
-              Trois informations suffisent pour démarrer. Nous revenons vers vous
+              Trois informations suffisent pour démarrer. Je reviens vers vous
               sous 24 h ouvrées avec un premier regard sur votre présence en ligne
               — ou une proposition de maquette si vous n’avez pas encore de site.
             </p>

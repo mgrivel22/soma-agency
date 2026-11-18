@@ -6,7 +6,7 @@ const reasons = [
   {
     icon: MapPin,
     title: "Pensé pour le local",
-    text: "Nous concevons des sites adaptés aux entreprises qui travaillent avec des clients dans leur zone géographique.",
+    text: "Je conçois des sites adaptés aux entreprises qui travaillent avec des clients dans leur zone géographique.",
   },
   {
     icon: Palette,
@@ -27,12 +27,12 @@ const reasons = [
 
 export function WhySection() {
   return (
-    <section className="border-t border-border py-20 sm:py-28">
+    <section className="border-t border-border py-14 sm:py-28">
       <Container>
         <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
           <div className="max-w-xl">
             <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
-              Une agence de taille humaine, spécialisée dans le local.
+              Une seule personne, spécialisée dans le local.
             </h2>
             <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground">
               Je m’appelle {siteConfig.founder}. J’ai créé Soma Digital pour les

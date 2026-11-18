@@ -6,7 +6,7 @@ export const launchOffer = {
   title: "Site vitrine sur mesure",
   audience: "Pour artisans et entreprises locales.",
   exchange:
-    "Tarif réduit en contrepartie de votre témoignage et du droit de présenter votre site dans nos réalisations.",
+    "Tarif réduit en contrepartie de votre témoignage et du droit de présenter votre site dans mes réalisations.",
   caveat: "Le prix final dépend du contenu et des fonctionnalités du projet.",
   delivery: "Livraison en 7 jours à partir de la validation du projet.",
   payment: "50 % au démarrage, 50 % à la livraison.",
@@ -36,21 +36,27 @@ export const excluded = [
 
 export const retainers = [
   {
-    name: "Autonome",
-    price: "0 € / mois",
-    detail:
-      "Vous gérez le renouvellement du domaine (~15 € / an). On vous prévient avant l’échéance.",
-  },
-  {
-    name: "Renouvellement Simple",
-    price: "19 € HT / mois",
-    detail:
-      "Domaine, hébergement, sauvegardes et mises à jour de sécurité pris en charge.",
-  },
-  {
     name: "Sérénité",
     price: "39 € HT / mois",
+    recommended: true,
     detail:
-      "Tout ce qui précède, plus les modifications de contenu traitées sous 24 h ouvrées.",
+      "Vos modifications sous 24 h ouvrées (par SMS ou e-mail), sauvegardes et sécurité. Domaine et hébergement inclus après la 1re année.",
+  },
+  {
+    name: "Essentiel",
+    price: "19 € HT / mois",
+    recommended: false,
+    detail:
+      "Sauvegardes et sécurité. Domaine et hébergement inclus après la 1re année. Modifications à la demande.",
+  },
+  {
+    name: "Autonome",
+    price: "0 € / mois",
+    recommended: false,
+    detail:
+      "Vous gérez seul. Après la 1re année, le domaine est à renouveler (~15 € / an) : je vous préviens avant.",
   },
 ] as const;
+
+export const retainerNote =
+  "Le suivi Sérénité est recommandé : votre site reste à jour sans que vous ayez à y penser.";

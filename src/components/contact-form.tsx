@@ -149,7 +149,7 @@ export function ContactForm() {
         <CheckCircle2 className="size-10 text-copper-dark" aria-hidden />
         <h3 className="mt-4 font-heading text-xl font-semibold text-foreground">Demande reçue</h3>
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-muted-foreground">
-          Merci ! Votre demande a bien été reçue. Nous revenons vers vous sous 24 h
+          Merci ! Votre demande a bien été reçue. Je reviens vers vous sous 24 h
           ouvrées.
         </p>
         <p className="mt-6 text-sm text-muted-foreground">Vous préférez en parler tout de suite ?</p>
@@ -225,7 +225,7 @@ export function ContactForm() {
         label="Site actuel"
         optional
         error={errors.website}
-        hint="Avec votre adresse, l’audit est plus précis. Laissez vide si vous n’avez pas encore de site — on vous proposera une maquette."
+        hint="Avec votre adresse, l’audit est plus précis. Laissez vide si vous n’avez pas encore de site — je vous proposerai une maquette."
       >
         <Input
           id="website"
@@ -353,7 +353,7 @@ export function ContactForm() {
                   label="Budget approximatif"
                   optional
                   error={errors.budget}
-                  hint="Une fourchette suffit. Nous en reparlons ensemble."
+                  hint="Une fourchette suffit. On en reparle ensemble."
                 >
                   <select
                     id="budget"

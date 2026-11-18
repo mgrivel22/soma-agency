@@ -113,7 +113,7 @@ export default async function ProjectPage({ params }: Props) {
             {project.demonstration || project.conceptual ? (
               <p className="mt-4 max-w-md text-sm text-muted-foreground">
                 Ceci est un projet de démonstration, pas un site client publié sous
-                ce nom. Il illustre le type de parcours que nous concevons pour ce
+                ce nom. Il illustre le type de parcours que je conçois pour ce
                 métier.
               </p>
             ) : (

@@ -101,7 +101,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         ok: false,
-        message: `L’envoi a échoué. Appelez-nous au ${siteConfig.phone.display} ou réessayez dans quelques minutes.`,
+        message: `L’envoi a échoué. Appelez-moi au ${siteConfig.phone.display} ou réessayez dans quelques minutes.`,
       },
       { status: 502 },
     );

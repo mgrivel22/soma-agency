@@ -4,12 +4,12 @@ const steps = [
   {
     step: "01",
     title: "Audit",
-    text: "Nous analysons votre site actuel et votre présence en ligne — ou, si vous n’avez pas encore de site, vos besoins et votre zone d’intervention.",
+    text: "J’analyse votre site actuel et votre présence en ligne — ou, si vous n’avez pas encore de site, vos besoins et votre zone d’intervention.",
   },
   {
     step: "02",
     title: "Conception",
-    text: "Nous concevons une interface moderne adaptée à votre activité et à votre clientèle.",
+    text: "Je conçois une interface moderne adaptée à votre activité et à votre clientèle.",
   },
   {
     step: "03",
@@ -25,14 +25,14 @@ const steps = [
 
 export function MethodSection() {
   return (
-    <section id="methode" className="scroll-mt-24 border-t border-border py-20 sm:py-28">
+    <section id="methode" className="scroll-mt-24 border-t border-border py-14 sm:py-28">
       <Container>
         <div className="max-w-2xl">
           <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
             Simple pour vous. Efficace pour votre entreprise.
           </h2>
         </div>
-        <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+        <ol className="mt-8 sm:mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
           {steps.map((item, index) => (
             <li
               key={item.step}

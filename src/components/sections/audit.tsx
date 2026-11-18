@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site";
 
 export function AuditSection() {
   return (
-    <section className="border-t border-border bg-anchor py-20 text-anchor-foreground sm:py-24">
+    <section className="border-t border-border bg-anchor py-14 text-anchor-foreground sm:py-24">
       <Container>
         <div className="relative mx-auto max-w-2xl text-center">
           <h2 className="font-heading text-3xl font-semibold text-anchor-foreground sm:text-4xl">
@@ -26,7 +26,7 @@ export function AuditSection() {
           </CtaButton>
           <p className="mt-4 text-sm text-anchor-muted">Sans engagement. Réponse sous 24 h ouvrées.</p>
           <p className="mt-6 text-sm text-anchor-muted">
-            Ou appelez-nous au{" "}
+            Ou appelez-moi au{" "}
             <a
               href={siteConfig.phone.href}
               className="font-semibold text-anchor-foreground underline decoration-primary/60 underline-offset-4 transition-colors hover:text-primary"
