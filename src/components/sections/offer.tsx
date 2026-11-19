@@ -1,7 +1,7 @@
 import { CtaButton } from "@/components/cta-button";
 import { Container } from "@/components/ui-primitives";
-import { excluded, included, launchOffer, retainerNote, retainers } from "@/lib/offer";
-import { Check } from "lucide-react";
+import { excluded, followUp, included, launchOffer } from "@/lib/offer";
+import { Check, ShieldCheck } from "lucide-react";
 
 export function OfferSection() {
   return (
@@ -10,37 +10,30 @@ export function OfferSection() {
         <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
           <div>
             <h2 className="font-heading text-3xl font-semibold text-foreground sm:text-4xl">
-              Tout ce qu’il faut pour une présence web professionnelle.
+              Un prix, tout compris.
             </h2>
             <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
-              Un site vitrine clair, utilisable sur téléphone, et conçu pour que vos
-              visiteurs vous contactent sans friction.
+              Un site clair, pensé pour le téléphone, qui donne envie à vos clients
+              de vous appeler. Pas de formule à choisir, pas de surprise.
             </p>
           </div>
           <div>
             <article className="border border-border bg-card p-6 sm:p-8">
-              <p className="text-sm font-medium text-copper-dark">{launchOffer.badge}</p>
-              <div className="mt-4 flex flex-wrap items-end justify-between gap-4 border-b border-border pb-6">
+              <div className="flex flex-wrap items-end justify-between gap-4">
                 <div>
                   <h3 className="font-heading text-2xl font-semibold text-foreground">
                     {launchOffer.title}
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground">{launchOffer.audience}</p>
                 </div>
-                <p className="text-right">
-                  <span className="block text-xs text-muted-foreground">
-                    Tarif habituel {launchOffer.usualPrice} HT
-                  </span>
-                  <span className="text-3xl font-semibold tracking-tight text-foreground">
-                    {launchOffer.price}
-                  </span>
-                  <span className="ml-1 text-sm text-muted-foreground">{launchOffer.tax}</span>
-                  <span className="mt-1 block text-xs text-muted-foreground">
-                    + suivi Sérénité recommandé : 39 € HT / mois
-                  </span>
+                <p className="font-heading text-5xl font-semibold tracking-tight text-foreground">
+                  {launchOffer.price}
                 </p>
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-foreground">{launchOffer.exchange}</p>
+              <p className="mt-6 flex items-start gap-3 bg-primary/10 p-4 text-sm font-medium leading-relaxed text-foreground">
+                <ShieldCheck className="mt-0.5 size-5 shrink-0 text-copper-dark" aria-hidden />
+                {launchOffer.guarantee}
+              </p>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                 {included.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-foreground">
@@ -49,48 +42,20 @@ export function OfferSection() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 border-t border-border pt-5">
-                <p className="text-sm font-medium text-foreground">Ce qui n’est pas inclus</p>
-                <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
-                  {excluded.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-              <p className="mt-5 text-sm text-muted-foreground">{launchOffer.caveat}</p>
-              <p className="mt-2 text-sm font-medium text-foreground">{launchOffer.delivery}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{launchOffer.payment}</p>
-              <p className="mt-2 text-sm font-medium text-foreground">{launchOffer.guarantee}</p>
+              <p className="mt-6 text-sm font-medium text-foreground">{launchOffer.delivery}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{launchOffer.payment}</p>
               <CtaButton href="/#contact" className="mt-6 w-full sm:w-auto">
-                Demander mon audit gratuit
+                Recevoir mon audit gratuit
               </CtaButton>
+              <div className="mt-6 space-y-3 border-t border-border pt-5 text-sm leading-relaxed">
+                <p className="text-foreground">{followUp.text}</p>
+                <p className="text-muted-foreground">{launchOffer.exchange}</p>
+                <p className="text-muted-foreground">
+                  <span className="font-medium text-foreground">Non inclus : </span>
+                  {excluded.join(", ")}.
+                </p>
+              </div>
             </article>
-            <div className="mt-8 border-t border-border pt-6">
-              <h3 className="font-heading text-lg font-semibold text-foreground">
-                Dès la mise en ligne, je m’occupe de votre site
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">{retainerNote}</p>
-              <ul className="mt-4 divide-y divide-border border-y border-border">
-                {retainers.map((item) => (
-                  <li key={item.name} className="grid gap-1 py-4 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] sm:gap-6">
-                    <p className="text-sm font-semibold text-foreground">
-                      {item.name}{" "}
-                      <span className="font-medium text-muted-foreground">({item.price})</span>
-                      {item.recommended ? (
-                        <span className="mt-1.5 block w-fit bg-primary px-2 py-0.5 text-xs font-medium text-primary-foreground">
-                          Recommandé
-                        </span>
-                      ) : null}
-                    </p>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-4 text-sm text-muted-foreground">
-                Sans engagement, résiliable à tout moment. Vous restez propriétaire à 100 %
-                de votre nom de domaine dans tous les cas.
-              </p>
-            </div>
           </div>
         </div>
       </Container>

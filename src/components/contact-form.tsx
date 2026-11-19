@@ -406,7 +406,7 @@ export function ContactForm() {
               Envoi en cours…
             </>
           ) : (
-            "Demander mon audit gratuit"
+            "Recevoir mon audit gratuit"
           )}
         </Button>
         <p className="text-center text-xs text-muted-foreground">

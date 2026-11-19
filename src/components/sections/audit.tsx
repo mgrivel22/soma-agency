@@ -14,7 +14,7 @@ export function AuditSection() {
           <p className="mt-5 text-base leading-relaxed text-anchor-muted sm:text-lg">
             Vous recevez une vidéo de 5 minutes : je passe en revue votre site
             (ou votre fiche Google si vous n’en avez pas encore) et je pointe
-            3 corrections concrètes. Sous 48 h. Pas de démarchage, pas de rappel
+            3 corrections concrètes, sous 48 h. Pas de démarchage, pas de rappel
             insistant.
           </p>
           <p className="mt-4 text-sm text-anchor-muted">
@@ -24,7 +24,7 @@ export function AuditSection() {
           <CtaButton href="/#contact" className="mt-8">
             Recevoir mon audit gratuit
           </CtaButton>
-          <p className="mt-4 text-sm text-anchor-muted">Sans engagement. Réponse sous 24 h ouvrées.</p>
+          <p className="mt-4 text-sm text-anchor-muted">Gratuit et sans engagement.</p>
           <p className="mt-6 text-sm text-anchor-muted">
             Ou appelez-moi au{" "}
             <a

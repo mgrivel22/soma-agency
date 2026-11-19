@@ -63,7 +63,7 @@ export default function OpenGraphImage() {
             Un site qui transforme vos visiteurs en demandes de devis.
           </div>
           <div style={{ fontSize: 26, color: "#A1A1AA", maxWidth: 780 }}>
-            Offre de lancement : site vitrine dès 490 € HT, livré en 7 jours.
+            Site vitrine tout compris à 199 €, en ligne en 7 jours.
           </div>
         </div>
       </div>

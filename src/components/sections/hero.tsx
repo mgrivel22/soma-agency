@@ -3,14 +3,14 @@ import { HeroDevices } from "@/components/mockups";
 import { Container } from "@/components/ui-primitives";
 import { projects } from "@/lib/projects";
 import { siteConfig } from "@/lib/site";
-import { Smartphone, Sparkles, Tag, Zap } from "lucide-react";
+import { Phone, Smartphone, Sparkles, Tag, Zap } from "lucide-react";
 import Link from "next/link";
 
 const reassurances = [
   { icon: Sparkles, label: "Design sur mesure" },
   { icon: Smartphone, label: "Optimisé mobile" },
   { icon: Zap, label: "Livré en 7 jours" },
-  { icon: Tag, label: "Dès 490 € — offre de lancement" },
+  { icon: Tag, label: "199 €, tout compris" },
 ];
 
 export function HeroSection() {
@@ -20,36 +20,46 @@ export function HeroSection() {
       <Container className="relative">
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-10">
           <div className="hero-enter max-w-2xl">
-            <p className="mb-5 text-sm font-medium text-primary">
-              Sites web pour entreprises locales
-            </p>
             <h1 className="font-heading text-[2rem] leading-[1.12] font-semibold text-anchor-foreground sm:text-5xl lg:text-[3.35rem]">
               Un site qui transforme vos visiteurs en demandes de devis.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-anchor-muted sm:text-lg">
-              Je crée des sites web modernes, rapides et conçus pour aider les
-              artisans et entreprises locales à générer davantage de contacts.
+              Je suis {siteConfig.founder}. Je crée des sites clairs et rapides pour
+              les artisans et entreprises locales, pour que votre téléphone sonne
+              plus souvent.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <CtaButton href="/#contact" className="w-full sm:w-auto">
-                Obtenir mon audit gratuit
+                Recevoir mon audit gratuit
               </CtaButton>
+              <a
+                href={siteConfig.phone.href}
+                className="inline-flex h-12 min-h-12 w-full items-center justify-center gap-2 rounded-md border border-white/20 px-5 text-[15px] font-semibold tracking-tight text-anchor-foreground transition-colors hover:border-white/40 hover:bg-white/8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring active:translate-y-px sm:hidden"
+              >
+                <Phone className="size-4 text-primary" aria-hidden />
+                Appeler {siteConfig.founder}
+              </a>
               <CtaButton
                 href="/#realisations"
                 variant="on-dark"
-                className="w-full sm:w-auto"
+                className="hidden sm:inline-flex"
               >
                 Voir mes réalisations
               </CtaButton>
             </div>
-            <p className="mt-4 text-sm text-anchor-muted">
-              Ou appelez-moi directement au{" "}
-              <a
-                href={siteConfig.phone.href}
-                className="font-semibold text-anchor-foreground underline decoration-primary/60 underline-offset-4 transition-colors hover:text-primary"
-              >
-                {siteConfig.phone.display}
-              </a>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-anchor-muted">
+              L’audit, c’est une vidéo de 5 minutes sur votre site ou votre fiche
+              Google, avec 3 corrections concrètes. Gratuit, sous 48 h.
+              <span className="hidden sm:inline">
+                {" "}Ou appelez-moi au{" "}
+                <a
+                  href={siteConfig.phone.href}
+                  className="font-semibold text-anchor-foreground underline decoration-primary/60 underline-offset-4 transition-colors hover:text-primary"
+                >
+                  {siteConfig.phone.display}
+                </a>
+                .
+              </span>
             </p>
             <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {reassurances.map((item) => (

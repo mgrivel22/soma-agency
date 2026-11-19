@@ -60,7 +60,7 @@ export function SiteHeader() {
             href="/#contact"
             className="hidden h-10 px-4 text-sm sm:inline-flex lg:h-11 lg:px-5 lg:text-[15px]"
           >
-            Obtenir mon audit gratuit
+            Recevoir mon audit gratuit
           </CtaButton>
           <CtaButton href="/#contact" className="h-10 px-3 text-sm sm:hidden">
             Audit gratuit
@@ -111,7 +111,7 @@ export function SiteHeader() {
                 className="mt-2 w-full"
                 onClick={() => setOpen(false)}
               >
-                Obtenir mon audit gratuit
+                Recevoir mon audit gratuit
               </CtaButton>
             </nav>
           </motion.div>

@@ -13,7 +13,7 @@ export function FinalCtaSection() {
             Donnez-lui une bonne raison de vous contacter.
           </p>
           <CtaButton href="/#contact" className="mt-8">
-            Obtenir mon audit gratuit
+            Recevoir mon audit gratuit
           </CtaButton>
         </div>
       </Container>

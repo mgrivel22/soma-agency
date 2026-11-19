@@ -2,12 +2,12 @@ export const faqs = [
   {
     question: "Combien coûte un site web ?",
     answer:
-      "L’offre de lancement est à 490 € HT pour un site vitrine sur mesure de 4 à 6 pages, avec la 1re année de nom de domaine et d’hébergement incluse. Le tarif habituel est de 1 190 € HT. Le prix final dépend du contenu et des fonctionnalités nécessaires (galerie, zones d’intervention, formulaires spécifiques). Après l’audit, je vous propose un périmètre et un tarif clairs, sans surprise.",
+      "199 €, tout compris : un site vitrine sur mesure de 4 à 6 pages, adapté au téléphone, avec la 1re année de nom de domaine et d’hébergement incluse. Pas de formule à choisir, pas de frais cachés. Seuls une boutique en ligne, la publicité ou une séance photo pro sont à part.",
   },
   {
     question: "Combien de temps faut-il pour créer un site ?",
     answer:
-      "La livraison prend 7 jours à partir de la validation du projet. Pour tenir ce délai, j’ai besoin de vos contenus (textes, photos, informations pratiques) dès le démarrage. Le processus est pensé pour vous demander le moins de temps possible.",
+      "La livraison prend 7 jours à partir de la validation du projet. Pour tenir ce délai, j’ai besoin de vos informations pratiques et de vos photos dès le démarrage. Les textes, je peux les rédiger pour vous après un court échange.",
   },
   {
     question: "Est-ce que vous travaillez uniquement avec les entreprises du BTP ?",
@@ -17,7 +17,7 @@ export const faqs = [
   {
     question: "Est-ce que je peux modifier mon site moi-même ?",
     answer:
-      "Oui. Les sites sont conçus pour que vous puissiez mettre à jour les informations essentielles (coordonnées, textes, photos) sans passer par un développeur. Si vous préférez ne pas vous en occuper, la formule Sérénité (39 € HT / mois) prend en charge vos modifications de contenu sous 24 h ouvrées, sur simple SMS ou e-mail. Dans tous les cas, vous restez propriétaire de votre site et de votre nom de domaine.",
+      "Oui. Les sites sont conçus pour que vous puissiez mettre à jour les informations essentielles (coordonnées, textes, photos) sans passer par un développeur. Si vous préférez ne pas vous en occuper, je peux m’en charger pour 39 € / mois : vous m’envoyez un SMS, c’est fait sous 24 h ouvrées. Dans tous les cas, vous restez propriétaire de votre site et de votre nom de domaine.",
   },
   {
     question: "Le site sera-t-il adapté au mobile ?",
@@ -27,16 +27,16 @@ export const faqs = [
   {
     question: "Que se passe-t-il après la mise en ligne ?",
     answer:
-      "Votre 1re année d’hébergement et de nom de domaine est déjà incluse. Dès la mise en ligne, je recommande la formule Sérénité (39 € HT / mois) : vos modifications de contenu sous 24 h, les sauvegardes et la sécurité, sans que vous ayez à y penser. Il existe aussi une formule Essentiel (19 € HT / mois), ou vous pouvez rester autonome — je vous préviens avant le renouvellement du domaine. Sans engagement, résiliable à tout moment.",
+      "Votre 1re année d’hébergement et de nom de domaine est incluse. Ensuite, deux possibilités : je m’occupe de tout pour 39 € / mois (modifications, hébergement, sauvegardes), sans engagement, ou vous gérez vous-même et vous ne payez que le renouvellement du domaine (environ 15 € par an). Je vous préviens avant l’échéance.",
   },
   {
     question: "Je n’ai ni textes ni photos, comment on fait ?",
     answer:
-      "Ce n’est pas un blocage. Je rédige les textes des pages à partir d’un échange (appel ou messages) et je travaille avec les photos que vous avez déjà — chantier, équipe, véhicules. Si une séance photo professionnelle est vraiment nécessaire, on en parle à part : ce n’est pas inclus dans l’offre de lancement.",
+      "Ce n’est pas un blocage. Je rédige les textes des pages à partir d’un échange (appel ou messages) et je travaille avec les photos que vous avez déjà — chantier, équipe, véhicules. Si une séance photo professionnelle est vraiment nécessaire, on en parle à part : ce n’est pas inclus dans le prix de 199 €.",
   },
   {
     question: "À qui appartient le site si je change de prestataire ?",
     answer:
-      "À vous, dans tous les cas. Le nom de domaine est enregistré à votre nom. Le code et les contenus vous sont remis. Vous n’êtes lié à aucun abonnement pour conserver votre site : la formule autonome est à 0 € / mois.",
+      "À vous, dans tous les cas. Le nom de domaine est enregistré à votre nom. Le code et les contenus vous sont remis. Vous n’êtes lié à aucun abonnement pour conserver votre site.",
   },
 ] as const;

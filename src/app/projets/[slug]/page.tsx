@@ -107,7 +107,7 @@ export default async function ProjectPage({ params }: Props) {
                 href="/#contact"
                 variant={project.url ? "secondary" : "primary"}
               >
-                Obtenir mon audit gratuit
+                Recevoir mon audit gratuit
               </CtaButton>
             </div>
             {project.demonstration || project.conceptual ? (

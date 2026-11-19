@@ -40,8 +40,8 @@ export function ProblemsSection() {
           ))}
         </div>
         <p className="mt-8 sm:mt-12 max-w-2xl text-base leading-relaxed text-foreground sm:text-lg">
-          Soma Digital transforme ces problèmes en une présence en ligne claire,
-          professionnelle et orientée conversion.
+          Mon travail : un site clair et sérieux, qui donne envie de vous
+          appeler plutôt que le concurrent.
         </p>
       </Container>
     </section>
